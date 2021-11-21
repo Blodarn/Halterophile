@@ -241,17 +241,17 @@ a:active {
   font-size: 1.3rem;
 }
 
-.nav-item a, footer a {
+.nav-item .nav-link, footer a {
   color: rgb(255, 255, 255, 0.7);
   text-shadow: 0 0.1rem 0.4rem rgba(191, 191, 191, 0.9);
 }
 
-.nav-item a:hover, footer a:hover {
+.nav-item .nav-link:hover, footer a:hover {
   color: rgb(255, 255, 255);
   text-shadow: 0 0.1rem 0.4rem rgba(191, 191, 191, 0.4);
 }
 
-.nav-item.active a {
+.nav-item.active .nav-link {
   font-weight: 500;
   color: rgb(255, 255, 255, 1);
 }
