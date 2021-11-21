@@ -230,13 +230,16 @@ a:active {
   -webkit-overflow-scrolling: touch;
 }
 
+.nav-link {
+  color: rgb(255, 255, 255, 0.7);
+  text-shadow: 0 0.1rem 0.4rem rgba(191, 191, 191, 0.9);
+  font-size: 1.3rem;
+}
+
 .nav-underline .nav-link {
   padding-top: .75rem;
   padding-bottom: .75rem;
   font-size: .875rem;
-  color: rgb(255, 255, 255, 0.7);
-  text-shadow: 0 0.1rem 0.4rem rgba(191, 191, 191, 0.9);
-  font-size: 1.3rem;
 }
 
 .nav-underline .nav-link:hover {
