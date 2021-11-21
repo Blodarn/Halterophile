@@ -237,18 +237,18 @@ a:active {
   -webkit-overflow-scrolling: touch;
 }
 
-.nav-item, footer a {
+.nav-item a, footer a {
   color: rgb(255, 255, 255, 0.7);
   text-shadow: 0 0.1rem 0.4rem rgba(191, 191, 191, 0.9);
   font-size: 1.3rem;
 }
 
-.nav-item:hover, footer a: hover {
+.nav-item a:hover, footer a: hover {
   color: rgb(255, 255, 255);
   text-shadow: 0 0.1rem 0.4rem rgba(191, 191, 191, 0.4);
 }
 
-.nav-item.active {
+.nav-item.active a {
   font-weight: 500;
   color: rgb(255, 255, 255, 1);
 }
