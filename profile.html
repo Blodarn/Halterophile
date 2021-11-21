@@ -17,23 +17,17 @@
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-    <!-- FONT-AWESOME -->
-    <script src="https://kit.fontawesome.com/de0af47863.js" crossorigin="anonymous"></script>
-
     <!-- SCRIPTS -->
       <!-- For side menu -->
       <script src="sideMenu.js"></script> 
 
-      <!-- For search bar -->
-      <script src="searchBar.js"></script> 
-
-      <!-- For changing text -->
-      <script src="changingText.js"></script> 
+    <!-- FONT-AWESOME -->
+    <script src="https://kit.fontawesome.com/de0af47863.js" crossorigin="anonymous"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="style.css">
 
-    <title>HALTEROPHILE</title>
+    <title>4CROSSLIFTERS</title>
   </head>
 
   <body>
@@ -50,7 +44,7 @@
 
       <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
@@ -71,7 +65,12 @@
 
         <!-- Right side -->
         <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+          <!-- This search bar search in the complete database -->
+          <form class="form-inline" id="searchButton">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          </form>
           <!-- If user is not connected -->
+      <!--
           <li class="dropdown order-1">
             <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-success dropdown-toggle">
               <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;Login <span class="caret"></span>
@@ -87,8 +86,9 @@
                   <div class="form-group">
                     <input id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="password" required="">
                   </div>
-
+      -->
                   <!-- When click, if the credentials are good, the user is redirected to his profile -->
+      <!--
                   <div class="form-group">
                     <button type="submit" class="btn login-button btn-block">Login</button>
                   </div>
@@ -106,9 +106,8 @@
               </li>
             </ul>
           </li>
-
+      -->
           <!-- If user is connected -->
-        <!--
           <li class="dropdown order-2">
             <button id="notifButton" type="button" data-toggle="dropdown" class="btn btn-outline-dark">
               Notifications <span class="badge badge-danger">4</span>
@@ -140,8 +139,7 @@
               <a href="notifications.html"><h6 class="text-center">See more</h6></a>
             </ul>
           </li>
-        -->
-        <!--
+
           <li class="dropdown order-3">
             <button type="button" id="dropdownMenu2" data-toggle="dropdown" class="btn btn-outline-success dropdown-toggle">
               <i class="fas fa-user-check"></i>&nbsp;&nbsp;John&nbsp;<span class="caret"></span>
@@ -151,76 +149,149 @@
               <a class="dropdown-item" href="profile.html"><i class="fas fa-user"></i>&nbsp;&nbsp;Profile</a>
 
               <a class="dropdown-item disabled" href="favorites.html"><i class="fas fa-heart"></i>&nbsp;&nbsp;Favorites</a>
-        -->
+        
               <!-- Logging out redirect the user to the home page -->
-      <!--    <a class="dropdown-item" href="index.html"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Log out</a>
+              <a class="dropdown-item" href="index.html"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Log out</a>
             </ul>
           </li>
-      -->
         </ul>
       </div>
     </nav>
 
-    <!-- RECOVER PASSWORD MODAL -->
-    <div class="modal fade" id="modalPassword" tabindex="-1" role="dialog" aria-labelledby="modalPasswordLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalPasswordLabel">Recover your password</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Input your email:</label>
-                <input id="emailInput" placeholder="Email" class="form-control form-control-sm" type="email" required="">
-              </div>
-
-              <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-block">Request a change of password</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- CONTENT -->
-    <div class="h-100 d-flex justify-content-center align-items-center overflow-hidden text-center">
-      <div id="titleSection" class="col-md-12 p-lg-12 mx-auto my-12 rounded shadow-sm p-3 p-md-5">
-        <h1 id="websiteTitle" class="display-1 font-weight-bold text-white">HALTEROPHILE</h1>
+    <!-- https://codepen.io/anandaprojapati/pen/GmrwYE -->
+    <div class="container-fluid containerPad">
+      <div id="form" class="form_wrapper mx-auto">
+        <div class="form_container h-100">
+          <div class="title_container">
+            <h2>Your informations</h2>
+            <small>As a member, you can edit only certain informations. For more, you need to be approve as an international athlete.</small>
+          </div>
 
-        <h1 class="display-5 font-weight-normal text-white">IT'S ALL ABOUT THE NUMBERS</h1>
+          <div class="row clearfix">
+            <div style="width: 100%;">
+              <form>
+                <div class="row">
+                  <div class="col-4 text-center">
+                    <img class="rounded-circle" src="profile_picture.png" alt="Profile picture" width="200px">
+                  </div>
 
-        <p class="lead font-weight-normal text-white">FEEL THE POWER OF DATA ANALYTICS IN <!--<span id="changingText">-->WEIGHTLIFTING<!--</span>--></p>
+                  <div class="col-8">
+                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                      <input type="text" name="name" placeholder="John" required />
+                    </div>
 
-        <div class="search-box">
-          <div class="search-icon"><i class="fa fa-search search-icon"></i></div>
+                    <div class="input_field"> <span><i class="far fa-user"></i></span>
+                      <input type="text" name="name" placeholder="Doe" required />
+                    </div>
 
-          <form action="" class="search-form">
-            <input type="text" placeholder="Search" id="search" autocomplete="off">
-          </form>
+                    <div class="input_field"> <span><i class="fas fa-user-tag"></i></span>
+                      <input type="text" name="username" placeholder="doje" required />
+                    </div>
 
-          <svg class="search-border" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 671 111" style="enable-background:new 0 0 671 111;"
-           xml:space="preserve">
-              <path class="border" d="M335.5,108.5h-280c-29.3,0-53-23.7-53-53v0c0-29.3,23.7-53,53-53h280"/>
-              <path class="border" d="M335.5,108.5h280c29.3,0,53-23.7,53-53v0c0-29.3-23.7-53-53-53h-280"/>
-            </svg>
+                    <div class="input_field"> <span><i class="fas fa-calendar-alt" style="padding-top: 6px;"></i></span>
+                      <input type="date" name="date" placeholder="MM/DD/YYYY" style="width: 100%; padding-left: 32px;" required />
+                    </div>
+                  </div>
+                </div>
 
-          <div class="go-icon"><i class="fa fa-arrow-right"></i></div>
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                  <input type="email" name="email" placeholder="doje1234@mail.com" required />
+                </div>                         
+
+                <div class="input_field"> <span><i class="fas fa-home"></i></span>
+                  <input type="text" id="inputAddress" placeholder="Address : 1234 Main St">
+                </div>
+
+                <div class="input_field"> <span><i class="fas fa-home"></i></span>
+                  <input type="text" id="inputAddress2" placeholder="Address 2 : Apartment, studio, or floor">
+                </div>
+
+                <div class="input_field select_option">
+                  <select>
+                    <option>Canada</option>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                  </select>
+                  <div class="select_arrow"></div>
+                </div>
+
+                <div class="input_field select_option">
+                  <select>
+                    <option>Quebec</option>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                  </select>
+                  <div class="select_arrow"></div>
+                </div>
+
+                <div class="input_field"> <span><i class="fas fa-city"></i></span>
+                  <input type="text" class="form-control" id="inputCity" placeholder="Montreal">
+                </div>
+
+                <div class="input_field checkbox_option">
+                  <input type="checkbox" name="checkboxgroup1" id="cb1" checked>
+                  <label for="cb1">Weightlifting</label>
+                  <input type="checkbox" name="checkboxgroup1" id="cb2">
+                  <label for="cb2">Powerlifting</label>
+                  <input type="checkbox" name="checkboxgroup1" id="cb3">
+                  <label for="cb3">Crosslifting</label>
+                  <input type="checkbox" name="checkboxgroup1" id="cb4">
+                  <label for="cb4">Functionnal training</label>
+                </div> 
+
+                <div class="input_field radio_option">
+                  <input type="radio" name="radiogroup1" id="rd1" checked>
+                  <label for="rd1">Male</label>
+                  <input type="radio" name="radiogroup1" id="rd2">
+                  <label for="rd2">Female</label>
+                </div>              
+
+                <div class="input_field checkbox_option">
+                  <input type="checkbox" id="cb5" checked disabled>
+                  <label for="cb5">I agree with the <a href="#">terms and conditions</a></label>
+                </div>
+
+                <div class="input_field checkbox_option">
+                  <input type="checkbox" id="cb6" checked disabled>
+                  <label for="cb6">I agree with the <a href="#">privacy policy</a></label>
+                </div>
+
+                <div class="input_field checkbox_option">
+                  <input type="checkbox" id="cb7" checked disabled>
+                  <label for="cb7">I want to receive the newsletter</label>
+                </div>
+
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                  <input type="password" name="password" placeholder="Password" required />
+                  <small id="passwordHelpBlock" class="form-text text-muted">
+                </div>
+
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                  <input type="password" name="password" placeholder="Re-type Password" required />
+                </div>
+
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                  Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+                </small>
+
+                <button class="btn send-button" id="submit" type="submit" value="Register">
+                  <div class="button">
+                    <i class="fas fa-check"></i><span class="send-text">Save</span>
+                  </div>
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- FOOTER -->
     <!-- FOOTER -->
     <footer class="footer text-dark font-small bg-white">
       <div class="container text-center">
-        © 2021 COPYRIGHT<a href="https://mdbootstrap.com/">&nbsp;HALTEROPHILIE.COM</a>
+        © 2020 Copyright<a href="https://mdbootstrap.com/">&nbsp;4crosslifters.com</a>
       </div>
     </footer>
-    <!-- Footer -->
   </body>
 </html>

@@ -8,13 +8,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <!-- jQuery -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    
-    <!-- Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    
-    <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
     <!-- FONT-AWESOME -->
@@ -33,7 +29,7 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="style.css">
 
-    <title>HALTEROPHILE</title>
+    <title>4CROSSLIFTERS</title>
   </head>
 
   <body>
@@ -50,11 +46,11 @@
 
       <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="about.html">ABOUT</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="about.html">ABOUT</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact.html">CONTACT</a>
@@ -71,6 +67,11 @@
 
         <!-- Right side -->
         <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+          <!-- This search bar search in the complete database -->
+          <form class="form-inline" id="searchButton">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          </form>
+          
           <!-- If user is not connected -->
           <li class="dropdown order-1">
             <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-success dropdown-toggle">
@@ -161,66 +162,14 @@
       </div>
     </nav>
 
-    <!-- RECOVER PASSWORD MODAL -->
-    <div class="modal fade" id="modalPassword" tabindex="-1" role="dialog" aria-labelledby="modalPasswordLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalPasswordLabel">Recover your password</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Input your email:</label>
-                <input id="emailInput" placeholder="Email" class="form-control form-control-sm" type="email" required="">
-              </div>
-
-              <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-block">Request a change of password</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- CONTENT -->
-    <div class="h-100 d-flex justify-content-center align-items-center overflow-hidden text-center">
-      <div id="titleSection" class="col-md-12 p-lg-12 mx-auto my-12 rounded shadow-sm p-3 p-md-5">
-        <h1 id="websiteTitle" class="display-1 font-weight-bold text-white">HALTEROPHILE</h1>
 
-        <h1 class="display-5 font-weight-normal text-white">IT'S ALL ABOUT THE NUMBERS</h1>
 
-        <p class="lead font-weight-normal text-white">FEEL THE POWER OF DATA ANALYTICS IN <!--<span id="changingText">-->WEIGHTLIFTING<!--</span>--></p>
-
-        <div class="search-box">
-          <div class="search-icon"><i class="fa fa-search search-icon"></i></div>
-
-          <form action="" class="search-form">
-            <input type="text" placeholder="Search" id="search" autocomplete="off">
-          </form>
-
-          <svg class="search-border" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 671 111" style="enable-background:new 0 0 671 111;"
-           xml:space="preserve">
-              <path class="border" d="M335.5,108.5h-280c-29.3,0-53-23.7-53-53v0c0-29.3,23.7-53,53-53h280"/>
-              <path class="border" d="M335.5,108.5h280c29.3,0,53-23.7,53-53v0c0-29.3-23.7-53-53-53h-280"/>
-            </svg>
-
-          <div class="go-icon"><i class="fa fa-arrow-right"></i></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- FOOTER -->
     <!-- FOOTER -->
     <footer class="footer text-dark font-small bg-white">
       <div class="container text-center">
-        © 2021 COPYRIGHT<a href="https://mdbootstrap.com/">&nbsp;HALTEROPHILIE.COM</a>
+        © 2020 Copyright<a href="https://mdbootstrap.com/">&nbsp;4crosslifters.com</a>
       </div>
     </footer>
-    <!-- Footer -->
   </body>
 </html>

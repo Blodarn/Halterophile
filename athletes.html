@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <!-- Chart JS -->
+    <!-- https://www.chartjs.org/docs/latest/ -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+    <!-- FONT-AWESOME -->
+    <script src="https://kit.fontawesome.com/de0af47863.js" crossorigin="anonymous"></script>
+
+    <!-- SCRIPTS -->
+      <!-- For side menu -->
+      <script src="sideMenu.js"></script>
+      
+      <!-- For tooltips -->
+      <script src="tooltips.js"></script>
+
+      <!-- For adding link on each row of the table -->
+      <script src="rowLinks.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>4CROSSLIFTERS - Athletes list</title>
+  </head>
+
+  <body id="athletes">
+    <!-- MENU -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white shadow-sm">
+      <!-- Left side -->
+      <a class="navbar-brand mr-auto mr-lg-0" href="index.html">
+        <img src="4CrossFitters_logo_insta_petit.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+      </a>
+
+      <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="about.html">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">CONTACT</a>
+          </li>
+          <li class="nav-item dropdown active">
+            <a class="nav-link dropdown-toggle active" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EXPLORE</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item active" href="athletes.html">ATHLETES</a>
+              <a class="dropdown-item" href="competitions.html">COMPETITIONS</a>
+              <a class="dropdown-item" href="countries.html">COUNTRIES</a>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Right side -->
+        <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+          <!-- If user is not connected -->
+          <li class="dropdown order-1">
+            <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-success dropdown-toggle">
+              <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;Login <span class="caret"></span>
+            </button>
+            
+            <ul class="dropdown-menu dropdown-menu-right mt-2">
+              <li class="px-3 py-2">
+                <form action="" class="form">
+                  <div class="form-group">
+                    <input id="emailInput" placeholder="Email" class="form-control form-control-sm" type="email" required="">
+                  </div>
+
+                  <div class="form-group">
+                    <input id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="password" required="">
+                  </div>
+
+                  <!-- When click, if the credentials are good, the user is redirected to his profile -->
+                  <div class="form-group">
+                    <button type="submit" class="btn login-button btn-block">Login</button>
+                  </div>
+
+                  <div class="dropdown-divider"></div>
+
+                  <div class="form-group text-center">
+                    <small><a href="register.html">Not a member? Register!</a></small>
+                  </div>
+
+                  <div class="form-group text-center">
+                    <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot password?</a></small>
+                  </div>
+                </form>
+              </li>
+            </ul>
+          </li>
+
+          <!-- If user is connected -->
+        <!--
+          <li class="dropdown order-2">
+            <button id="notifButton" type="button" data-toggle="dropdown" class="btn btn-outline-dark">
+              Notifications <span class="badge badge-danger">4</span>
+            </button>
+
+            <ul class="dropdown-menu dropdown-menu-right mt-2" style="">
+              <h5 class="notifTitle">Favorites</h5>
+
+              <a class="dropdown-item" href="#">
+                <span class="badge badge-dark">Athlete</span> New results added for NameAthlete.
+              </a>
+
+              <div class="dropdown-divider"></div>
+
+              <h5 class="notifTitle">All</h5>
+
+              <a class="dropdown-item" href="#">
+                <span class="badge badge-dark">Athlete</span> New results added for NameAthlete.
+              </a>              
+
+              <a class="dropdown-item" href="#">
+                <span class="badge badge-primary">Competition</span> New results added for NameCompetition.
+              </a>              
+
+              <a class="dropdown-item" href="#">
+                <span class="badge badge-danger">Country</span> New results added for NameCountry.
+              </a>
+
+              <a href="notifications.html"><h6 class="text-center">See more</h6></a>
+            </ul>
+          </li>
+        -->
+        <!--
+          <li class="dropdown order-3">
+            <button type="button" id="dropdownMenu2" data-toggle="dropdown" class="btn btn-outline-success dropdown-toggle">
+              <i class="fas fa-user-check"></i>&nbsp;&nbsp;John&nbsp;<span class="caret"></span>
+            </button>
+            
+            <ul class="dropdown-menu dropdown-menu-right mt-2">
+              <a class="dropdown-item" href="profile.html"><i class="fas fa-user"></i>&nbsp;&nbsp;Profile</a>
+
+              <a class="dropdown-item disabled" href="favorites.html"><i class="fas fa-heart"></i>&nbsp;&nbsp;Favorites</a>
+        -->
+              <!-- Logging out redirect the user to the home page -->
+      <!--    <a class="dropdown-item" href="index.html"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Log out</a>
+            </ul>
+          </li>
+      -->
+        </ul>
+      </div>
+    </nav>
+
+    <!-- CONTENT -->
+    <div class="container-fluid containerPad">
+      <div class="row rowP">
+        <!-- List of athletes (show 30 max) -->
+        <!-- "See more" options at the end show more data when clicked (10 by 10). No refresh of the page. -->
+        <!-- Each row is clickable and redirect the user to the right athlete profile. -->
+        <div class="col table-responsive">
+          <table id="tableAllCompetitions" class="table table-hover bg-white shadow-sm">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">First name</th>
+                <th scope="col">Last name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Birth date</th>
+                <th scope="col">Country</th>
+                <th scope="col">AC&nbsp;
+                  <span class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Age category"></span>
+                </th>
+                <th scope="col">WC&nbsp;
+                  <span class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Weight category"></span>
+                </th>
+                <th scope="col"># competitions</th>
+                <th scope="col">BC&nbsp;
+                  <span class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Best competition"></span>
+                </th>
+                <th scope="col">BS&nbsp;
+                  <span class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Best snatch"></span>
+                </th>
+                <th scope="col">SR&nbsp;
+                  <span class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Snatch ratio"></span>
+                </th>
+                <th scope="col">BCJ&nbsp;
+                  <span class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Best clean and Jerk"></span>
+                </th>
+                <th scope="col">CJR&nbsp;
+                  <span class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Clean and Jerk ratio"></span>
+                </th>
+                <th scope="col">BT&nbsp;
+                  <span class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Best total"></span>
+                </th>
+                <th scope="col">TR&nbsp;
+                  <span class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Total ratio"></span>
+                </th>
+                <th scope="col">BS&nbsp;
+                  <span class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Best sinclair"></span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr class='click-row' data-href='athlete_profile.html'>
+                <td>FirstNameX</td>
+                <td>LastNameX</td>
+                <td>GenderX</td>
+                <td>####-##-##</td>
+                <td>CountryX</td>
+                <td>ageCatX</td>
+                <td>##</td>
+                <td>##</td>
+                <td>CompetitionNameX</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##</td>
+                <td>##,##</td>
+                <td>##,##</td>
+              </tr>
+              <tr>
+                <td colspan="16">
+                  <a href="notifications.html">
+                    <h6 class="text-center">See more</h6>
+                  </a>
+                </td>                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer text-dark font-small bg-white">
+      <div class="container text-center">
+        © 2020 Copyright<a href="https://mdbootstrap.com/">&nbsp;4crosslifters.com</a>
+      </div>
+    </footer>
+    <!-- Footer -->
+  </body>
+</html>

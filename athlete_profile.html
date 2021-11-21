@@ -1,0 +1,1945 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <!-- Chart JS -->
+    <!-- https://www.chartjs.org/docs/latest/ -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+    <!-- FONT-AWESOME -->
+    <script src="https://kit.fontawesome.com/de0af47863.js" crossorigin="anonymous"></script>
+
+    <!-- SCRIPTS -->
+      <!-- For side menu -->
+      <script src="sideMenu.js"></script>
+
+      <!-- For adding link on each row of the table -->
+      <script src="rowLinks.js"></script>
+      
+      <!-- For tooltips -->
+      <script src="tooltips.js"></script>
+      
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>4CROSSLIFTERS - Athlete profile</title>
+  </head>
+
+  <body id="athleteProfile">
+    <!-- MENU -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white shadow-sm">
+      <!-- Left side -->
+      <a class="navbar-brand mr-auto mr-lg-0" href="index.html">
+        <img src="4CrossFitters_logo_insta_petit.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+      </a>
+
+      <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="about.html">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">CONTACT</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EXPLORE</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="athletes.html">ATHLETES</a>
+              <a class="dropdown-item" href="competitions.html">COMPETITIONS</a>
+              <a class="dropdown-item" href="countries.html">COUNTRIES</a>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Right side -->
+        <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+          <!-- This search bar search in the complete database -->
+          <form class="form-inline" id="searchButton">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          </form>
+          <!-- If user is not connected -->
+      <!--
+          <li class="dropdown order-1">
+            <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-success dropdown-toggle">
+              <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;Login <span class="caret"></span>
+            </button>
+            
+            <ul class="dropdown-menu dropdown-menu-right mt-2">
+              <li class="px-3 py-2">
+                <form action="" class="form">
+                  <div class="form-group">
+                    <input id="emailInput" placeholder="Email" class="form-control form-control-sm" type="email" required="">
+                  </div>
+
+                  <div class="form-group">
+                    <input id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="password" required="">
+                  </div>
+      -->
+                  <!-- When click, if the credentials are good, the user is redirected to his profile -->
+      <!--
+                  <div class="form-group">
+                    <button type="submit" class="btn login-button btn-block">Login</button>
+                  </div>
+
+                  <div class="dropdown-divider"></div>
+
+                  <div class="form-group text-center">
+                    <small><a href="register.html">Not a member? Register!</a></small>
+                  </div>
+
+                  <div class="form-group text-center">
+                    <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot password?</a></small>
+                  </div>
+                </form>
+              </li>
+            </ul>
+          </li>
+      -->
+          <!-- If user is connected -->
+          <li class="dropdown order-2">
+            <button id="notifButton" type="button" data-toggle="dropdown" class="btn btn-outline-dark">
+              Notifications <span class="badge badge-danger">4</span>
+            </button>
+
+            <ul class="dropdown-menu dropdown-menu-right mt-2" style="">
+              <h5 class="notifTitle">Favorites</h5>
+
+              <a class="dropdown-item" href="#">
+                <span class="badge badge-dark">Athlete</span> New results added for NameAthlete.
+              </a>
+
+              <div class="dropdown-divider"></div>
+
+              <h5 class="notifTitle">All</h5>
+
+              <a class="dropdown-item" href="#">
+                <span class="badge badge-dark">Athlete</span> New results added for NameAthlete.
+              </a>              
+
+              <a class="dropdown-item" href="#">
+                <span class="badge badge-primary">Competition</span> New results added for NameCompetition.
+              </a>              
+
+              <a class="dropdown-item" href="#">
+                <span class="badge badge-danger">Country</span> New results added for NameCountry.
+              </a>
+
+              <a href="notifications.html"><h6 class="text-center">See more</h6></a>
+            </ul>
+          </li>
+
+          <li class="dropdown order-3">
+            <button type="button" id="dropdownMenu2" data-toggle="dropdown" class="btn btn-outline-success dropdown-toggle">
+              <i class="fas fa-user-check"></i>&nbsp;&nbsp;John&nbsp;<span class="caret"></span>
+            </button>
+            
+            <ul class="dropdown-menu dropdown-menu-right mt-2">
+              <a class="dropdown-item" href="profile.html"><i class="fas fa-user"></i>&nbsp;&nbsp;Profile</a>
+
+              <a class="dropdown-item disabled" href="favorites.html"><i class="fas fa-heart"></i>&nbsp;&nbsp;Favorites</a>
+        
+              <!-- Logging out redirect the user to the home page -->
+              <a class="dropdown-item" href="index.html"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Log out</a>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- HEADER -->
+    <!-- DATE COME FROM ATHLETE DATABASE -->
+    <header id="profile" class="header">
+      <div class="row text-center text-uppercase" style="margin-bottom: 25px;">
+        <div class="col-12 col-sm-3 col-md-2 col-lg-2 col-xl-1" style="margin-bottom: 25px;">
+        	<div class="row">
+	        	<!-- NOTE BASED ON THE ATHLETE PROFILE (AVERAGE OF ALL THE CHARACTERISTICS) -->
+	          <!-- A+ > 90        -->
+	          <!-- 85 <= A  < 90  -->
+	          <!-- 80 <= A- < 85  -->
+	          <!-- 75 <= B+ < 80  -->
+	          <!-- 70 <= B  < 75  -->
+	          <!-- 65 <= B- < 70  -->
+	          <!-- 60 <= C+ < 65  -->
+	          <!-- 55 <= C  < 60  -->
+	          <!-- 50 <= C- < 55  -->
+	          <!-- 45 <= D+ < 50  -->
+	          <!-- 40 <= D  < 45  -->
+	          <!-- 35 <= D- < 40  -->
+	      		<div class="col-4 col-sm-12 text-center">
+	      			<span class="badge badge-pill badge-light">Grade</span>&nbsp;<h1 class="display-5">A+</h1>
+	    			</div>
+	      		
+	      		<!-- TOTAL NUMBER OF COMPETITIONS DONE BY THE ATHLETE -->
+	      		<div class="col-4 col-sm-12 text-center">
+	      			<span class="badge badge-pill badge-light">#Comp.</span>&nbsp;<h1 class="display-5">125</h1>
+	    			</div>
+
+	      		<!-- WEIGHT CATEGORY AT LAST COMPETITION -->
+	      		<div class="col-4 col-sm-12 text-center">
+	      			<span class="badge badge-pill badge-light">Cat.</span>&nbsp;<h1 class="display-5">81</h1>
+	    			</div>
+    			</div>
+        </div>
+
+        <div class="col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2" style="margin-bottom: 25px;">
+          <img class="img-thumbnail img-fluid" src="profile_picture.png" alt="Profile picture">
+          <!-- ATHLETE IMAGE -->
+        </div>
+
+        <!-- ATHLETE SHORT BIO -->
+        <!-- IF SOCIAL LINK IS MISSING, HIDE ICON -->
+        <div class="col-12 col-sm-5 col-md-7 col-lg-3 col-xl-3 text-sm-left" style="border-right: 1px solid #fff; margin-bottom: 25px;">
+          <h1><i class="fab fa-canadian-maple-leaf">&nbsp;&nbsp;</i>John Doe</h1>
+          
+          <!-- Fetch date of birth and country of birth of the athlete -->
+          <p>Born on ####-##-## in Canada</p>
+          
+          <!-- Fetch sport country of the athlete -->
+          <p>Compete for Canada</p>
+
+          <!-- Fetch sports of the athlete -->
+          <p>Train in weightlifting</p>
+
+          <div id="profile-social">
+            <a href="#">
+              <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse" aria-hidden="true"></i>
+              </span>
+            </a>
+
+            <a href="#">
+              <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fab fa-instagram fa-stack-1x fa-inverse" aria-hidden="true"></i>
+              </span>
+            </a>
+
+            <a href="#">
+              <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse" aria-hidden="true"></i></a>
+              </span>
+            </a>
+
+            <a href="#">
+              <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x" ></i>
+                <i class="fab fa-youtube fa-stack-1x fa-inverse" aria-hidden="true"></i>
+              </span>
+            </a>
+
+            <a href="#">
+              <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x" ></i>
+                <i class="fas fa-globe fa-stack-1x fa-inverse" aria-hidden="true"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <!-- ATHLETE BEST PERFORMANCE ACCROSS ALL HIS COMPETITIONS -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-6" style="padding-right: 30px;">
+        	<div class="row">
+        		<div class="col" style="padding-left: 0px; padding-right: 0px;">
+	        		<table class="table table-borderless bg-white">
+							  <tbody>
+							    <tr class='click-row' data-href='competition_profile.html'>
+							      <th scope="row">LC&nbsp;<span class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Last competition"></span></th>
+
+							      <!-- Name of last competition of the athlete -->
+							      <!-- Click on the competition name redirect the user to the competition profile -->
+							      <td>CompetitionNameX&nbsp;<span class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Name of the athlete last competition"></span></td>
+
+							      <!-- Snatch result of last competition of the athlete -->
+							      <td>145&nbsp;<span class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Snatch"></span></td>
+
+							      <!-- Clean&Jerk result of last competition of the athlete -->
+							      <td>180&nbsp;<span class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Clean and Jerk"></span></td>
+
+							      <!-- Total result of last competition of the athlete -->
+							      <td>325&nbsp;<span class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Total"></span></td>
+							    </tr>
+							  </tbody>
+							</table>
+						</div>
+					</div>
+
+          <h3 class="text-uppercase">Best</h3>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+              <h4 class="text-uppercase">Snatch</h4>
+              <p class="display-4 best-kg">135<span class="badge badge-pill badge-light badge-kg">56</span></p>
+              <!-- The gold number represent the best snatch ever made by the athlete. -->
+              <!-- The number in the badge represent the weight category the athlete was when he did his best snatch. -->
+            </div>
+
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+              <h4 class="text-uppercase">CJ&nbsp;<span class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Clean & Jerk"></span></h4>
+              <p class="display-4 best-kg">235<span class="badge badge-pill badge-light badge-kg">56</span></p>
+              <!-- The gold number represent the best clean&jerk ever made by the athlete. -->
+              <!-- The number in the badge represent the weight category the athlete was when he did his best clean&jerk. -->
+            </div>
+
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+              <h4 class="text-uppercase">Total</h4>
+              <p class="display-4 best-kg">370<span class="badge badge-pill badge-light badge-kg">56</span></p>
+              <!-- The gold number represent the best total ever made by the athlete. -->
+              <!-- The number in the badge represent the weight category the athlete was when he did his best total. -->
+            </div>
+          </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="container-fluid containerPad">
+      <div class="row equal">
+        <!-- ATHLETE RADAR PROFILE -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 rowP text-center">
+          <div class="colPad card bg-white shadow-sm border-green" style="width: 100%; height: 100%;">
+            <div class="card-body">
+            	<canvas id="profilRadar"></canvas>
+	            <!-- Experience : The more years of competing, the better -->
+	            <!-- Efficiency : The less miss attempts, the better -->
+	            <!-- Effectiveness : The more medals, the better. Attribute points for gold (5), silver (3), bronzez (1) -->
+	            <!-- Confidence : The most time the first attempts has been succesful, the better -->
+	            <!-- Accuracy : The more times the athlete has his bodyweight closer to his weight category, the better -->
+	            <!-- Strength : When the athlete has his snatch __% smaller than his clean and jerk -->
+	            <!-- Technique : When the athlete has his clean and jerk __% bigger than his snatch -->
+	            <script>
+	              var ctx = document.getElementById('profilRadar');
+	              var profilRadar = new Chart(ctx, {
+	                  type: 'radar',
+	                  data: {
+	                      labels: ['Experience', 'Efficiency', 'Effectiveness', 'Confidence', 'Accuracy', 'Strength', 'Technique'],
+	                      datasets: [{
+	                          data: [80, 60, 70, 20, 86, 95, 75],
+	                          backgroundColor: 'rgb(40, 167, 69, 0.3)',
+	                          borderColor: 'rgba(40, 167, 69, 1)',
+	                          borderWidth: 2,
+	                          pointBackgroundColor: 'rgba(40, 167, 69, 1)'
+	                      }]
+	                  },
+	                  options: {
+	                    scale: {
+	                        angleLines: {
+	                            display: true
+	                        },
+	                        ticks: {
+	                            suggestedMin: 0,
+	                            suggestedMax: 100
+	                        }
+	                    },
+	                    responsive: true,
+	                    legend: {
+	                      display: false,
+	                    },
+	                    title: {
+	                      display: true,
+	                      text: 'Athlete profil'
+	                    },
+	                    animation: {
+	                      animateScale: true,
+	                    }
+	                  }
+	              });
+	            </script>
+            </div>
+
+            <div class="footer">
+            	<!-- A click add this profile to the user's favorites -->
+	            <a href="#"><span class="badge badge-pill badge-success"><i class="fas fa-plus"></i> Follow</span></a>
+
+	            <!-- Show the number of users that added this profile in favorite -->
+	            <a href="#"><span class="badge badge-pill badge-primary"><i class="fas fa-users"></i> 900 Followers</span></a>
+
+	            <!-- Show the number of views of this page -->
+	            <a href="#"><span class="badge badge-dark"><i class="fas fa-eye"></i> 245 Views</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- MEDALS ANALYSIS -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 rowP">
+          <div class="colPadRL bg-white shadow-sm border-blue" style="width: 100%; height: 100%;">
+            <div class="row text-center">
+              <div class="col" style="padding-right: 0; padding-left: 0;">
+                <div class="list-group list-group-horizontal" id="listMedals" role="medalsList">
+                  <li class="list-group-item list-group-item-action active" data-toggle="list" href="#youthMedals" role="tab">
+                    Youth&nbsp;&nbsp;<span class="badge badge-primary badge-pill">20</span>
+                    <!-- The number in the badge represent the total number of medals won as a youth. -->
+                  </li>
+                  <li class="list-group-item list-group-item-action" data-toggle="list" href="#juniorMedals" role="tab">
+                    Junior&nbsp;&nbsp;<span class="badge badge-primary badge-pill">9</span>
+                    <!-- The number in the badge represent the total number of medals won as a junior. -->
+                  </li>
+                  <li class="list-group-item list-group-item-action" data-toggle="list" href="#seniorMedals" role="tab">
+                    Senior&nbsp;&nbsp;<span class="badge badge-primary badge-pill">12</span>
+                    <!-- The number in the badge represent the total number of medals won as a senior. -->
+                  </li>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-content text-center">
+        			<!-- ALL THE MEDALS WON WHEN THE ATHLETE WAS A YOUTH -->
+        			<!-- IF NO DATA, DISABLE YOUTH MENU AND DELETE YOUTH CONTENT OF .tab-pane.row -->
+              <div class="tab-pane fade show active" id="youthMedals" role="tabpanel">
+                <div class="row">
+                  <canvas id="youthMedalsChart" height="150px"></canvas>
+                  <script>
+                    var ctx = document.getElementById('youthMedalsChart');
+                    var youthMedalsChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Gold', 'Silver', 'Bronze'],
+                            datasets: [{
+                                data: [8, 10, 2],
+                                backgroundColor: [
+                                    'rgba(255, 215, 0, 0.5)',
+                                    'rgba(192, 192, 192, 0.5)',
+                                    'rgba(205, 127, 50, 0.5)'
+                                ],
+                                borderColor: [
+                                    'rgba(255, 215, 0, 1)',
+                                    'rgba(192, 192, 192, 1)',
+                                    'rgba(205, 127, 50, 1)'
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                          responsive: true,
+                          legend: {
+                            position: 'bottom',
+                          },
+                          title: {
+                            display: true,
+                            text: 'Youth medals analysis'
+                          },
+                          animation: {
+                            animateScale: true,
+                            animateRotate: true
+                          }
+                        }
+                    });
+                  </script>
+                </div>
+              </div>
+
+              <!-- ALL THE MEDALS WON WHEN THE ATHLETE WAS A JUNIOR -->
+        			<!-- IF NO DATA, DISABLE JUNIOR MENU AND DELETE JUNIOR CONTENT OF .tab-pane.row -->
+              <div class="tab-pane fade" id="juniorMedals" role="tabpanel">
+                <div class="row">
+                  <canvas id="juniorMedalsChart" height="150px"></canvas>
+                  <script>
+                    var ctx = document.getElementById('juniorMedalsChart');
+                    var juniorMedalsChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Gold', 'Silver', 'Bronze'],
+                            datasets: [{
+                                data: [8, 10, 2],
+                                backgroundColor: [
+                                    'rgba(255, 215, 0, 0.5)',
+                                    'rgba(192, 192, 192, 0.5)',
+                                    'rgba(205, 127, 50, 0.5)'
+                                ],
+                                borderColor: [
+                                    'rgba(255, 215, 0, 1)',
+                                    'rgba(192, 192, 192, 1)',
+                                    'rgba(205, 127, 50, 1)'
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                          responsive: true,
+                          legend: {
+                            position: 'bottom',
+                          },
+                          title: {
+                            display: true,
+                            text: 'Junior medals analysis'
+                          },
+                          animation: {
+                            animateScale: true,
+                            animateRotate: true
+                          }
+                        }
+                    });
+                  </script>
+                </div>
+              </div>
+
+              <!-- ALL THE MEDALS WON WHEN THE ATHLETE WAS A SENIOR -->
+        			<!-- IF NO DATA, DISABLE SENIOR MENU AND DELETE SENIOR CONTENT OF .tab-pane.row -->
+              <div class="tab-pane fade" id="seniorMedals" role="tabpanel">
+                <div class="row">
+                  <canvas id="seniorMedalsChart" height="150px"></canvas>
+                  <script>
+                    var ctx = document.getElementById('seniorMedalsChart');
+                    var seniorMedalsChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Gold', 'Silver', 'Bronze'],
+                            datasets: [{
+                                data: [8, 10, 2],
+                                backgroundColor: [
+                                    'rgba(255, 215, 0, 0.5)',
+                                    'rgba(192, 192, 192, 0.5)',
+                                    'rgba(205, 127, 50, 0.5)'
+                                ],
+                                borderColor: [
+                                    'rgba(255, 215, 0, 1)',
+                                    'rgba(192, 192, 192, 1)',
+                                    'rgba(205, 127, 50, 1)'
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                          responsive: true,
+                          legend: {
+                            position: 'bottom',
+                          },
+                          title: {
+                            display: true,
+                            text: 'Senior medals analysis'
+                          },
+                          animation: {
+                            animateScale: true,
+                            animateRotate: true
+                          }
+                        }
+                    });
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--BW RATIOS & COUNTRIES VISITED -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 rowP">
+          <div class="colPadRL bg-white shadow-sm border-blue" style="width: 100%; height: 100%;">
+            <div class="row text-center">
+              <div class="col" style="padding-left: 0; padding-right: 0;">
+                <div class="list-group list-group-horizontal" id="listRatiosCountries" role="ratiosCountriesList">
+                  <li class="list-group-item list-group-item-action active" data-toggle="list" href="#bwRatios" role="tab">
+                    Bodyweight ratios&nbsp;&nbsp;<span class="badge badge-primary badge-pill">3</span>
+                    <!-- The number in the badge represent the total number of bodyweight ratios analysed. -->
+                  </li>
+                  <li class="list-group-item list-group-item-action" data-toggle="list" href="#countries" role="tab">
+                    Countries of competition&nbsp;&nbsp;<span class="badge badge-primary badge-pill">32</span>
+                    <!-- The number in the badge represent the total number of countries where the athlete competed. -->
+                  </li>
+                </div>
+              </div>
+            </div>
+            
+            <div class="tab-content">
+            	<!-- TAKE BODYWEIGHT RATIOS AT LAST COMPETITION -->
+        			<!-- IF NO DATA, DISABLE BODYWEIGHT RATIOS MENU AND DELETE BODYWEIGHT RATIOS CONTENT OF .tab-pane.row -->
+              <div class="tab-pane fade show active" id="bwRatios" role="tabpanel">
+                <div class="row text-center" style="padding-top: 15px; padding-bottom: 15px;">
+                  <canvas id="bwRatiosChart" height="150px"></canvas>
+                  <script>
+                    var ctx = document.getElementById('bwRatiosChart');
+                    var bwRatiosChart = new Chart(ctx, {
+                        type: 'polarArea',
+                        data: {
+                            labels: ['Snatch', 'Clean&Jerk', 'Total'],
+                            datasets: [{
+                                data: [2, 3, 5],
+                                backgroundColor: [
+                                    "rgba(0,123,255, 0.5)",
+                                    "rgba(255,0,123, 0.5)",
+                                    "rgba(0, 0, 0, 0.5)"
+                                ],
+                                borderColor: [
+                                    "rgba(0,123,255, 1)",
+                                    "rgba(255,0,123, 1)",
+                                    "rgba(0, 0, 0, 1)"
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                          responsive: true,
+                          legend: {
+                            position: 'bottom',
+                          },
+                          title: {
+                            display: true,
+                            text: 'Ratios analysis'
+                          },
+                          animation: {
+                            animateScale: true,
+                            animateRotate: true
+                          }
+                        }
+                    });
+                  </script>
+                </div>
+              </div>
+
+              <!-- TAKE ALL THE COUNTRIES WHERE THE ATHLETE COMPETED -->
+        			<!-- IF NO DATA, DISABLE COUNTRIES OF COMPETITION MENU AND DELETE COUNTRIES OF COMPETITION CONTENT OF .tab-pane.row -->
+              <div class="tab-pane fade" id="countries" role="tabpanel">
+                <div class="row text-center" style="padding-top: 15px; padding-bottom: 15px;">
+                  <canvas id="countriesChart" height="150px"></canvas>
+                  <script>
+                    var ctx = document.getElementById('countriesChart');
+                    var countriesChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['China', 'USA', 'France', 'Italia', 'Japan', 'Germany', 'Canada'],
+                            datasets: [{
+                                data: [8, 3, 6, 3, 8, 3, 1],
+                                backgroundColor: [
+                                    
+                                ],
+                                borderColor: [
+                                    
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                          responsive: true,
+                          legend: {
+                            position: 'bottom',
+                          },
+                          title: {
+                            display: true,
+                            text: 'Countries competitions analysis'
+                          },
+                          animation: {
+                            animateScale: true,
+                            animateRotate: true
+                          }
+                        }
+                    });
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROGRESSION ANALYSIS - LINE CHART -->
+      <div class="row rowP">
+        <div class="col">
+          <div class="colPadRL bg-white shadow-sm border-blue">
+            <div class="row text-center">
+              <div class="col text-center" style="padding-right: 0; padding-left: 0;">
+                <div class="list-group list-group-horizontal" id="listProgression" role="progressionList">
+                  <li class="list-group-item list-group-item-action active" data-toggle="list" href="#youthProgression" role="tab">
+                    Youth&nbsp;&nbsp;<span class="badge badge-primary badge-pill">24</span>
+                    <!-- The number in the badge represent the total number of competitions done as a youth for the actual year. -->
+                  </li>
+                  <li class="list-group-item list-group-item-action" data-toggle="list" href="#juniorProgression" role="tab">
+                    Junior&nbsp;&nbsp;<span class="badge badge-primary badge-pill">49</span>
+                    <!-- The number in the badge represent the total number of competitions done as a junior for the actual year. -->
+                  </li>
+                  <li class="list-group-item list-group-item-action" data-toggle="list" href="#seniorProgression" role="tab">
+                    Senior&nbsp;&nbsp;<span class="badge badge-primary badge-pill">52</span>
+                    <!-- The number in the badge represent the total number of competitions done as a senior for the actual year. -->
+                  </li>
+                  <li class="list-group-item list-group-item-action" data-toggle="list" href="#allProgression" role="tab">
+                    All&nbsp;&nbsp;<span class="badge badge-primary badge-pill">125</span>
+                    <!-- The number in the badge represent the total number of competitions done for the actual year. -->
+                  </li>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-content text-center">
+            	<!-- TAKE ALL THE BODYWEIGHTS, SNATCHES, AND CLEAN&JERK RESULTS OF THE ATHLETE AS A YOUTH FOR THE COMPETITION OF THE ACTUAL YEAR-->
+        			<!-- IF NO DATA, DISABLE YOUTH MENU AND DELETE YOUTH CONTENT OF .tab-pane.row -->
+              <div class="tab-pane fade show active" id="youthProgression" role="tabpanel">
+                <div class="row text-center" style="padding: 15px;">
+                  <canvas id="youthProgressionChart"></canvas>
+                  <script>
+                    var ctx = document.getElementById('youthProgressionChart');
+                    var youthProgressionChart = new Chart(ctx ,{
+                      "type":"line",
+                      "data": {
+                                labels: ["CompetitionX","CompetitionY","CompetitionZ","CompetitionW","CompetitionG","CompetitionF","CompetitionT"],
+                                datasets:[{
+                                            label:"Bodyweight",
+                                            data:[45,53,58,61,63,64,66,68],
+                                            fill:false,
+                                            borderColor: 'rgb(123,255,0)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Snatch",
+                                            data:[145,153,158,161,163,164,166,168],
+                                            fill:false,
+                                            borderColor: 'rgb(0,123,255)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Clean&Jerk",
+                                            data:[185,193,198,201,203,204,206,208],
+                                            fill:false,
+                                            borderColor: 'rgb(255,0,123)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Total",
+                                            data:[385,393,398,401,404,404,406,408],
+                                            fill:false,
+                                            borderColor: 'rgba(0, 0, 0, 1)',
+                                            lineTension:0.1
+                                          }]
+                              },
+                                options: {
+                                  responsive: true,
+                                  legend: {
+                                    position: 'bottom',
+                                  },
+                                  title: {
+                                    display: true,
+                                    text: 'Athlete progression accross competitions'
+                                  },
+                                  animation: {
+                                    animateScale: true
+                                  }
+                                }
+                              }
+                                );
+                  </script>
+                </div>
+              </div>
+
+              <!-- TAKE ALL THE BODYWEIGHTS, SNATCHES, AND CLEAN&JERK RESULTS OF THE ATHLETE AS A JUNIOR OF THE ACTUAL YEAR -->
+        			<!-- IF NO DATA, DISABLE JUNIOR MENU AND DELETE JUNIOR CONTENT OF .tab-pane.row -->
+              <div class="tab-pane fade" id="juniorProgression" role="tabpanel">
+                <div class="row text-center" style="padding-top: 15px; padding-bottom: 15px;">
+                  <canvas id="juniorProgressionChart"></canvas>
+                  <script>
+                    var ctx = document.getElementById('juniorProgressionChart');
+                    var juniorProgressionChart = new Chart(ctx ,{
+                      "type":"line",
+                      "data": {
+                                labels: ["CompetitionX","CompetitionY","CompetitionZ","CompetitionW","CompetitionG","CompetitionF","CompetitionT"],
+                                datasets:[{
+                                            label:"Bodyweight",
+                                            data:[45,53,58,61,63,64,66,68],
+                                            fill:false,
+                                            borderColor: 'rgb(123,255,0)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Snatch",
+                                            data:[145,153,158,161,163,164,166,168],
+                                            fill:false,
+                                            borderColor: 'rgb(0,123,255)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Clean&Jerk",
+                                            data:[185,193,198,201,203,204,206,208],
+                                            fill:false,
+                                            borderColor: 'rgb(255,0,123)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Total",
+                                            data:[385,393,398,401,404,404,406,408],
+                                            fill:false,
+                                            borderColor: 'rgba(0, 0, 0, 1)',
+                                            lineTension:0.1
+                                          }]
+                              },
+                                options: {
+                                  responsive: true,
+                                  legend: {
+                                    position: 'bottom',
+                                  },
+                                  title: {
+                                    display: true,
+                                    text: 'Athlete progression accross competitions'
+                                  },
+                                  animation: {
+                                    animateScale: true
+                                  }
+                                }
+                              }
+                                );
+                  </script>
+                </div>
+              </div>
+
+              <!-- TAKE ALL THE BODYWEIGHTS, SNATCHES, AND CLEAN&JERK RESULTS OF THE ATHLETE AS A SENIOR OF THE ACTUAL YEAR -->
+        			<!-- IF NO DATA, DISABLE SENIOR MENU AND DELETE SENIOR CONTENT OF .tab-pane.row -->
+              <div class="tab-pane fade" id="seniorProgression" role="tabpanel">
+                <div class="row text-center" style="padding-top: 15px; padding-bottom: 15px;">
+                  <canvas id="seniorProgressionChart"></canvas>
+                  <script>
+                    var ctx = document.getElementById('seniorProgressionChart');
+                    var seniorProgressionChart = new Chart(ctx ,{
+                      "type":"line",
+                      "data": {
+                                labels: ["CompetitionX","CompetitionY","CompetitionZ","CompetitionW","CompetitionG","CompetitionF","CompetitionT"],
+                                datasets:[{
+                                            label:"Bodyweight",
+                                            data:[45,53,58,61,63,64,66,68],
+                                            fill:false,
+                                            borderColor: 'rgb(123,255,0)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Snatch",
+                                            data:[145,153,158,161,163,164,166,168],
+                                            fill:false,
+                                            borderColor: 'rgb(0,123,255)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Clean&Jerk",
+                                            data:[185,193,198,201,203,204,206,208],
+                                            fill:false,
+                                            borderColor: 'rgb(255,0,123)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Total",
+                                            data:[385,393,398,401,404,404,406,408],
+                                            fill:false,
+                                            borderColor: 'rgba(0, 0, 0, 1)',
+                                            lineTension:0.1
+                                          }]
+                              },
+                                options: {
+                                  responsive: true,
+                                  legend: {
+                                    position: 'bottom',
+                                  },
+                                  title: {
+                                    display: true,
+                                    text: 'Athlete progression accross competitions'
+                                  },
+                                  animation: {
+                                    animateScale: true
+                                  }
+                                }
+                              }
+                                );
+                  </script>
+                </div>
+              </div>
+
+              <!-- TAKE ALL THE TOTAL RESULTS OF THE ATHLETE AS A YOUTH, AS A JUNIOR AND AS A SENIOR OF THE ACTUAL YEAR -->
+        			<!-- IF NO DATA, DISABLE ALL MENU AND DELETE ALL CONTENT OF .tab-pane.row -->
+              <div class="tab-pane fade" id="allProgression" role="tabpanel">
+                <div class="row text-center" style="padding-top: 15px; padding-bottom: 15px;">
+                  <canvas id="allProgressionChart"></canvas>
+                  <script>
+                    var ctx = document.getElementById('allProgressionChart');
+                    var allProgressionChart = new Chart(ctx ,{
+                      'type':'line',
+                      'data': {
+                                labels: ['CompetitionX','CompetitionY','CompetitionZ','CompetitionW','CompetitionG','CompetitionF','CompetitionT'],
+                                datasets:[{
+                                            label:'Total as a youth',
+                                            data:[45,53,58,61,63,64,66,68],
+                                            fill:false,
+                                            borderColor: 'rgb(123,255,0)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:'Total as a junior',
+                                            data:[145,153,158,161,163,164,166,168],
+                                            fill:false,
+                                            borderColor: 'rgb(0,123,255)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:'Total as a senior',
+                                            data:[185,193,198,201,203,204,206,208],
+                                            fill:false,
+                                            borderColor: 'rgb(255,0,123)',
+                                            lineTension:0.1
+                                          }]
+                              },
+                                options: {
+                                  responsive: true,
+                                  legend: {
+                                    position: 'bottom',
+                                  },
+                                  title: {
+                                    display: true,
+                                    text: 'Athlete progression accross competitions'
+                                  },
+                                  animation: {
+                                    animateScale: true
+                                  }
+                                }
+                              }
+                                );
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ANALYSIS SNATCH AND CLEAN&JERK ATTEMPTS FOR THE ACTUAL YEAR-->
+      <div class="row">
+        <!-- 1st column, 1st menu : Analysis of the snatch -->
+        <!-- WHEN AN ATTEMPTS IS WITHOUT *, IT IS SUCCESSFUL. COUNT ALL SUCCESSFULL SNATCH ATTEMPTS -->
+        <!-- WHEN AN ATTEMPTS IS WITH *, IT IS UNSUCCESSFUL. COUNT ALL UNSUCCESSFULL SNATCH ATTEMPTS -->
+  			<!-- IF NO DATA, DISABLE SNATCH MENU AND DELETE SNATCH CONTENT OF .tab-pane.row -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 text-center rowP">
+          <div class="bg-white shadow-sm border-blue" style="width: 100%; height: 100%;">
+            <div class="list-group list-group-horizontal" id="listAttempts" role="attemptsList">
+              <li class="list-group-item list-group-item-action active" data-toggle="list" href="#snatch" role="tab">
+                Snatch&nbsp;&nbsp;<span class="badge badge-primary badge-pill">270</span>
+                <!-- The number in the badge represent the total number of snatches done. -->
+              </li>
+              <li class="list-group-item list-group-item-action" data-toggle="list" href="#cleanandjerk" role="tab">
+                Clean&Jerk&nbsp;&nbsp;<span class="badge badge-primary badge-pill">289</span>
+                <!-- The number in the badge represent the total number of clean&jerks done. -->
+              </li>
+            </div>
+            
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="snatch" role="tabpanel">
+                <div class="row text-center" style="padding-top: 15px; padding-bottom: 15px;">
+                  <canvas id="snatchAttemptsChart" height="150px"></canvas>
+                  <script>
+                    var ctx = document.getElementById('snatchAttemptsChart');
+                    var snatchAttemptsChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Good lift', 'No lift', 'Pass'],
+                            datasets: [{
+                                data: [80, 18, 2],
+                                backgroundColor: [
+                                    'rgba(40, 167, 69, 0.5)',
+                                    'rgba(239, 51, 64, 0.5)',
+                                    'rgba(0, 0, 0, 0.5)'
+                                ],
+                                borderColor: [
+                                    'rgba(40, 167, 69, 1)',
+                                    'rgba(239, 51, 64, 1)',
+                                    'rgba(0, 0, 0, 1)'
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                          responsive: true,
+                          legend: {
+                            position: 'bottom',
+                          },
+                          title: {
+                            display: true,
+                            text: 'Snatch attempts analysis'
+                          },
+                          animation: {
+                            animateScale: true,
+                            animateRotate: true
+                          }
+                        }
+                    });
+                  </script>
+                </div>
+              </div>
+
+              <!-- 1st column, 2nd menu : Analysis of the clean&jerk -->
+			        <!-- WHEN AN ATTEMPTS IS WITHOUT *, IT IS SUCCESSFUL. COUNT ALL SUCCESSFULL CLEAN&JERK ATTEMPTS -->
+			        <!-- WHEN AN ATTEMPTS IS WITH *, IT IS UNSUCCESSFUL. COUNT ALL UNSUCCESSFULL CLEAN&JERK ATTEMPTS -->
+			  			<!-- IF NO DATA, DISABLE CLEAN&JERK MENU AND DELETE CLEAN&JERK CONTENT OF .tab-pane.row -->
+              <div class="tab-pane fade" id="cleanandjerk" role="tabpanel">
+                <div class="row text-center">
+                  <canvas id="cjAttemptsChart" height="150px"></canvas>
+                  <script>
+                    var ctx = document.getElementById('cjAttemptsChart');
+                    var cjAttemptsChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Good lift', 'No lift', 'Pass'],
+                            datasets: [{
+                                data: [80, 18, 2],
+                                backgroundColor: [
+                                    'rgba(40, 167, 69, 0.5)',
+                                    'rgba(239, 51, 64, 0.5)',
+                                    'rgba(0, 0, 0, 0.5)'
+                                ],
+                                borderColor: [
+                                    'rgba(40, 167, 69, 1)',
+                                    'rgba(239, 51, 64, 1)',
+                                    'rgba(0, 0, 0, 1)'
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                          responsive: true,
+                          legend: {
+                            position: 'bottom',
+                          },
+                          title: {
+                            display: true,
+                            text: 'Clean & Jerk attempts analysis'
+                          },
+                          animation: {
+                            animateScale: true,
+                            animateRotate: true
+                          }
+                        }
+                    });
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2nd column, 1st menu : Analysis of the first attempts in the snatch -->
+        <!-- WHEN AN ATTEMPTS IS WITHOUT *, IT IS SUCCESSFUL. COUNT ALL SUCCESSFULL SNATCH 1st ATTEMPTS -->
+        <!-- WHEN AN ATTEMPTS IS WITH *, IT IS UNSUCCESSFUL. COUNT ALL UNSUCCESSFULL SNATCH 1st ATTEMPTS -->
+  			<!-- IF NO DATA, DISABLE 1ST ATTEMPTS MENU AND DELETE 1ST ATTEMPTS CONTENT OF .tab-pane.row -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 text-center rowP">
+          <div class="bg-white shadow-sm border-blue" style="width: 100%; height: 100%;">
+            <div class="list-group list-group-horizontal" id="listSnatchAttempts" role="snatchAttemptsList">
+              <li class="list-group-item list-group-item-action active" data-toggle="list" href="#snatchFirstAttempts" role="tab">
+                1st attempts&nbsp;&nbsp;<span class="badge badge-primary badge-pill">270</span>
+              </li>
+              <!-- The number in the badge represent the total number of snatches as a 1st attempts done. -->
+              <li class="list-group-item list-group-item-action" data-toggle="list" href="#snatchSecondAttempts" role="tab">
+                2nd attempts&nbsp;&nbsp;<span class="badge badge-primary badge-pill">289</span>
+              </li>
+              <!-- The number in the badge represent the total number of snatches as a 2nd attempts done. -->
+              <li class="list-group-item list-group-item-action" data-toggle="list" href="#snatchThirdAttempts" role="tab">
+                3rd attempts&nbsp;&nbsp;<span class="badge badge-primary badge-pill">289</span>
+              </li>
+              <!-- The number in the badge represent the total number of snatches as a 3rd attempts done. -->
+            </div>
+            
+            <div class="tab-content text-center">
+              <div class="tab-pane fade show active" id="snatchFirstAttempts" role="tabpanel">
+                <div class="row" style="padding-top: 15px; padding-bottom: 15px;">
+                  <canvas id="snatchFirstAttemptsChart" height="150px"></canvas>
+                  <script>
+                    var ctx = document.getElementById('snatchFirstAttemptsChart');
+                    var snatchFirstAttemptsChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Good lift', 'No lift', 'Pass'],
+                            datasets: [{
+                                data: [80, 18, 2],
+                                backgroundColor: [
+                                    'rgba(40, 167, 69, 0.5)',
+                                    'rgba(239, 51, 64, 0.5)',
+                                    'rgba(0, 0, 0, 0.5)'
+                                ],
+                                borderColor: [
+                                    'rgba(40, 167, 69, 1)',
+                                    'rgba(239, 51, 64, 1)',
+                                    'rgba(0, 0, 0, 1)'
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                          responsive: true,
+                          legend: {
+                            position: 'bottom',
+                          },
+                          title: {
+                            display: true,
+                            text: 'Snatch 1st attempts analysis'
+                          },
+                          animation: {
+                            animateScale: true,
+                            animateRotate: true
+                          }
+                        }
+                    });
+                  </script>
+                </div>
+              </div>
+
+              <!-- 2nd column, 2nd menu : Analysis of the 2nd attempts in the snatch -->
+			        <!-- WHEN AN ATTEMPTS IS WITHOUT *, IT IS SUCCESSFUL. COUNT ALL SUCCESSFULL SNATCH 2nd ATTEMPTS -->
+			        <!-- WHEN AN ATTEMPTS IS WITH *, IT IS UNSUCCESSFUL. COUNT ALL UNSUCCESSFULL SNATCH 2nd ATTEMPTS -->
+			  			<!-- IF NO DATA, DISABLE 2ND ATTEMPTS MENU AND DELETE 2ND ATTEMPTS CONTENT OF .tab-pane.row -->
+              <div class="tab-pane fade" id="snatchSecondAttempts" role="tabpanel">
+                <div class="row">
+                  <canvas id="snatchSecondAttemptsChart" height="150px"></canvas>
+                  <script>
+                    var ctx = document.getElementById('snatchSecondAttemptsChart');
+                    var snatchSecondAttemptsChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Good lift', 'No lift', 'Pass'],
+                            datasets: [{
+                                data: [80, 18, 2],
+                                backgroundColor: [
+                                    'rgba(40, 167, 69, 0.5)',
+                                    'rgba(239, 51, 64, 0.5)',
+                                    'rgba(0, 0, 0, 0.5)'
+                                ],
+                                borderColor: [
+                                    'rgba(40, 167, 69, 1)',
+                                    'rgba(239, 51, 64, 1)',
+                                    'rgba(0, 0, 0, 1)'
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                          responsive: true,
+                          legend: {
+                            position: 'bottom',
+                          },
+                          title: {
+                            display: true,
+                            text: 'Snatch 2nd attempts analysis'
+                          },
+                          animation: {
+                            animateScale: true,
+                            animateRotate: true
+                          }
+                        }
+                    });
+                  </script>
+                </div>
+              </div>
+
+              <!-- 2nd column, 3rd menu : Analysis of the third attempts in the snatch -->
+			        <!-- WHEN AN ATTEMPTS IS WITHOUT *, IT IS SUCCESSFUL. COUNT ALL SUCCESSFULL SNATCH 3rd ATTEMPTS -->
+			        <!-- WHEN AN ATTEMPTS IS WITH *, IT IS UNSUCCESSFUL. COUNT ALL UNSUCCESSFULL SNATCH 3rd ATTEMPTS -->
+			  			<!-- IF NO DATA, DISABLE 3rd ATTEMPTS MENU AND DELETE 3rd ATTEMPTS CONTENT OF .tab-pane.row -->
+              <div class="tab-pane fade" id="snatchThirdAttempts" role="tabpanel">
+                <div class="row">
+                  <canvas id="snatchThirdAttemptsChart" height="150px"></canvas>
+                  <script>
+                    var ctx = document.getElementById('snatchThirdAttemptsChart');
+                    var snatchThirdAttemptsChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Good lift', 'No lift', 'Pass'],
+                            datasets: [{
+                                data: [80, 18, 2],
+                                backgroundColor: [
+                                    'rgba(40, 167, 69, 0.5)',
+                                    'rgba(239, 51, 64, 0.5)',
+                                    'rgba(0, 0, 0, 0.5)'
+                                ],
+                                borderColor: [
+                                    'rgba(40, 167, 69, 1)',
+                                    'rgba(239, 51, 64, 1)',
+                                    'rgba(0, 0, 0, 1)'
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                          responsive: true,
+                          legend: {
+                            position: 'bottom',
+                          },
+                          title: {
+                            display: true,
+                            text: 'Snatch 3rd attempts analysis'
+                          },
+                          animation: {
+                            animateScale: true,
+                            animateRotate: true
+                          }
+                        }
+                    });
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+
+        <!-- 3rd column : Analysis of the attempts in the clean&jerk -->
+        <!-- 3rd column, 1st menu : Analysis of the first attempts in the clean&jerk -->
+        <!-- WHEN AN ATTEMPTS IS WITHOUT *, IT IS SUCCESSFUL. COUNT ALL SUCCESSFULL clean&jerk 1st ATTEMPTS -->
+        <!-- WHEN AN ATTEMPTS IS WITH *, IT IS UNSUCCESSFUL. COUNT ALL UNSUCCESSFULL clean&jerk 1st ATTEMPTS -->
+  			<!-- IF NO DATA, DISABLE 1st ATTEMPTS MENU AND DELETE 1st ATTEMPTS CONTENT OF .tab-pane.row -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 text-center rowP">
+          <div class="bg-white shadow-sm border-blue" style="width: 100%; height: 100%;">
+            <div class="list-group list-group-horizontal" id="listCJAttempts" role="cjAttemptsList">
+              <li class="list-group-item list-group-item-action active" data-toggle="list" href="#cjFirstAttempts" role="tab">
+                1st attempts&nbsp;&nbsp;<span class="badge badge-primary badge-pill">270</span>
+              </li>
+              <!-- The number in the badge represent the total number of clean&jerks as a 1st attempts done. -->
+              <li class="list-group-item list-group-item-action" data-toggle="list" href="#cjSecondAttempts" role="tab">
+                2nd attempts&nbsp;&nbsp;<span class="badge badge-primary badge-pill">289</span>
+              </li>
+              <!-- The number in the badge represent the total number of clean&jerks as a 2nd attempts done. -->
+              <li class="list-group-item list-group-item-action" data-toggle="list" href="#cjThirdAttempts" role="tab">
+                3rd attempts&nbsp;&nbsp;<span class="badge badge-primary badge-pill">289</span>
+              </li>
+              <!-- The number in the badge represent the total number of clean&jerks as a 3rd attempts done. -->
+            </div>
+            
+            <div class="tab-content text-center">
+              <div class="tab-pane fade show active" id="cjFirstAttempts" role="tabpanel">
+                <div class="row">
+                  <canvas id="cjFirstAttemptsChart" height="150px"></canvas>
+                  <script>
+                    var ctx = document.getElementById('cjFirstAttemptsChart');
+                    var cjFirstAttemptsChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Good lift', 'No lift', 'Pass'],
+                            datasets: [{
+                                data: [80, 18, 2],
+                                backgroundColor: [
+                                    'rgba(40, 167, 69, 0.5)',
+                                    'rgba(239, 51, 64, 0.5)',
+                                    'rgba(0, 0, 0, 0.5)'
+                                ],
+                                borderColor: [
+                                    'rgba(40, 167, 69, 1)',
+                                    'rgba(239, 51, 64, 1)',
+                                    'rgba(0, 0, 0, 1)'
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                          responsive: true,
+                          legend: {
+                            position: 'bottom',
+                          },
+                          title: {
+                            display: true,
+                            text: 'Clean&Jerk 1st attempts analysis'
+                          },
+                          animation: {
+                            animateScale: true,
+                            animateRotate: true
+                          }
+                        }
+                    });
+                  </script>
+                </div>
+              </div>
+
+              <!-- 3rd column, 2nd menu : Analysis of the 2nd attempts in the clean&jerk -->
+			        <!-- WHEN AN ATTEMPTS IS WITHOUT *, IT IS SUCCESSFUL. COUNT ALL SUCCESSFULL clean&jerk 2nd ATTEMPTS -->
+			        <!-- WHEN AN ATTEMPTS IS WITH *, IT IS UNSUCCESSFUL. COUNT ALL UNSUCCESSFULL clean&jerk 2nd ATTEMPTS -->
+			  			<!-- IF NO DATA, DISABLE 2nd ATTEMPTS MENU AND DELETE 2nd ATTEMPTS CONTENT OF .tab-pane.row -->
+              <div class="tab-pane fade" id="cjSecondAttempts" role="tabpanel">
+                <div class="row">
+                  <canvas id="cjSecondAttemptsChart" height="150px"></canvas>
+                  <script>
+                    var ctx = document.getElementById('cjSecondAttemptsChart');
+                    var cjSecondAttemptsChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Good lift', 'No lift', 'Pass'],
+                            datasets: [{
+                                data: [80, 18, 2],
+                                backgroundColor: [
+                                    'rgba(40, 167, 69, 0.5)',
+                                    'rgba(239, 51, 64, 0.5)',
+                                    'rgba(0, 0, 0, 0.5)'
+                                ],
+                                borderColor: [
+                                    'rgba(40, 167, 69, 1)',
+                                    'rgba(239, 51, 64, 1)',
+                                    'rgba(0, 0, 0, 1)'
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                          responsive: true,
+                          legend: {
+                            position: 'bottom',
+                          },
+                          title: {
+                            display: true,
+                            text: 'Clean&Jerk 2nd attempts analysis'
+                          },
+                          animation: {
+                            animateScale: true,
+                            animateRotate: true
+                          }
+                        }
+                    });
+                  </script>
+                </div>
+              </div>
+
+              <!-- 3rd column, 3rd menu : Analysis of the 3rd attempts in the clean&jerk -->
+			        <!-- WHEN AN ATTEMPTS IS WITHOUT *, IT IS SUCCESSFUL. COUNT ALL SUCCESSFULL clean&jerk 3rd ATTEMPTS -->
+			        <!-- WHEN AN ATTEMPTS IS WITH *, IT IS UNSUCCESSFUL. COUNT ALL UNSUCCESSFULL clean&jerk 3rd ATTEMPTS -->
+			  			<!-- IF NO DATA, DISABLE 3rd ATTEMPTS MENU AND DELETE 3rd ATTEMPTS CONTENT OF .tab-pane.row -->
+              <div class="tab-pane fade" id="cjThirdAttempts" role="tabpanel">
+                <div class="row">
+                  <canvas id="cjThirdAttemptsChart" height="150px"></canvas>
+                  <script>
+                    var ctx = document.getElementById('cjThirdAttemptsChart');
+                    var cjThirdAttemptsChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Good lift', 'No lift', 'Pass'],
+                            datasets: [{
+                                data: [80, 18, 2],
+                                backgroundColor: [
+                                    'rgba(40, 167, 69, 0.5)',
+                                    'rgba(239, 51, 64, 0.5)',
+                                    'rgba(0, 0, 0, 0.5)'
+                                ],
+                                borderColor: [
+                                    'rgba(40, 167, 69, 1)',
+                                    'rgba(239, 51, 64, 1)',
+                                    'rgba(0, 0, 0, 1)'
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                          responsive: true,
+                          legend: {
+                            position: 'bottom',
+                          },
+                          title: {
+                            display: true,
+                            text: 'Clean&Jerk 3rd attempts analysis'
+                          },
+                          animation: {
+                            animateScale: true,
+                            animateRotate: true
+                          }
+                        }
+                    });
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+
+      <!-- ANALYSIS OF RESULTS NUMBER OF COMPETITIONS ACCROSS YEARS AND AGE CATEGORY - LINE CHART -->
+      <div class="row">
+      	<!-- ANALYSIS OF NUMBER OF COMPETITIONS ACCROSS YEARS AND AGE CATEGORY -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center rowP">
+          <div class="bg-white shadow-sm border-blue" style="width: 100%; height: 100%;">
+            <div class="list-group list-group-horizontal" id="listnumberComp" role="numberCompList">
+              <li class="list-group-item list-group-item-action active" data-toggle="list" href="#numberCompYouth" role="tab">
+                Youth&nbsp;&nbsp;<span class="badge badge-primary badge-pill">100</span>
+                <!-- The number in the badge represent the total number of competitions done as a youth. -->
+              </li>
+              <li class="list-group-item list-group-item-action" data-toggle="list" href="#numberCompJunior" role="tab">
+                Junior&nbsp;&nbsp;<span class="badge badge-primary badge-pill">120</span>
+                <!-- The number in the badge represent the total number of competitions done as a junior. -->
+              </li>
+              <li class="list-group-item list-group-item-action" data-toggle="list" href="#numberCompSenior" role="tab">
+                Senior&nbsp;&nbsp;<span class="badge badge-primary badge-pill">140</span>
+                <!-- The number in the badge represent the total number of competitions done as a senior. -->
+              </li>
+              <li class="list-group-item list-group-item-action" data-toggle="list" href="#numberCompTotal" role="tab">
+                All&nbsp;&nbsp;<span class="badge badge-primary badge-pill">360</span>
+                <!-- The number in the badge represent the total number of competitions done. -->
+              </li>
+            </div>
+
+            <div class="tab-content text-center">
+            	<!-- COUNT ALL THE COMPETITIONS DONE BY THE ATHLETE AS A YOUTH -->
+        			<!-- IF NO DATA, DISABLE YOUTH MENU AND DELETE YOUTH CONTENT OF .tab-pane.row -->
+              <div class="tab-pane fade show active" id="numberCompYouth" role="tabpanel">
+                <div class="row text-center" style="padding: 15px;">
+                  <canvas id="numberCompYouthChart"></canvas>
+                  <script>
+                    var ctx = document.getElementById('numberCompYouthChart');
+                    var numberCompYouthChart = new Chart(ctx ,{
+                      "type":"line",
+                      "data": {
+                                labels: ["yearX","yearY","yearZ","yearW","yearG","yearF","yearT"],
+                                datasets:[{
+                                            label:"# competitions",
+                                            data:[45,53,58,61,63,64,66,68],
+                                            fill:false,
+                                            borderColor: 'rgb(123,255,0)',
+                                            lineTension:0.1
+                                          }]
+                              },
+                                options: {
+                                  responsive: true,
+                                  legend: {
+                                    position: 'bottom',
+                                  },
+                                  title: {
+                                    display: true,
+                                    text: '# competitions done as a youth'
+                                  },
+                                  animation: {
+                                    animateScale: true
+                                  }
+                                }
+                              }
+                                );
+                  </script>
+                </div>
+              </div>
+
+              <!-- COUNT ALL THE COMPETITIONS DONE BY THE ATHLETE AS A JUNIOR -->
+        			<!-- IF NO DATA, DISABLE JUNIOR MENU AND DELETE JUNIOR CONTENT OF .tab-pane.row -->
+              <div class="tab-pane fade" id="numberCompJunior" role="tabpanel">
+                <div class="row text-center" style="padding-top: 15px; padding-bottom: 15px;">
+                  <canvas id="numberCompJuniorChart"></canvas>
+                  <script>
+                    var ctx = document.getElementById('numberCompJuniorChart');
+                    var numberCompJuniorChart = new Chart(ctx ,{
+                      "type":"line",
+                      "data": {
+                                labels: ["yearX","yearY","yearZ","yearW","yearG","yearF","yearT"],
+                                datasets:[{
+                                            label:"# competitions",
+                                            data:[45,53,58,61,63,64,66,68],
+                                            fill:false,
+                                            borderColor: 'rgb(123,255,0)',
+                                            lineTension:0.1
+                                          }]
+                              },
+                                options: {
+                                  responsive: true,
+                                  legend: {
+                                    position: 'bottom',
+                                  },
+                                  title: {
+                                    display: true,
+                                    text: '# competitions done per year'
+                                  },
+                                  animation: {
+                                    animateScale: true
+                                  }
+                                }
+                              }
+                                );
+                  </script>
+                </div>
+              </div>
+
+              <!-- COUNT ALL THE COMPETITIONS DONE BY THE ATHLETE AS A SENIOR -->
+        			<!-- IF NO DATA, DISABLE SENIOR MENU AND DELETE SENIOR CONTENT OF .tab-pane.row -->
+              <div class="tab-pane fade" id="numberCompSenior" role="tabpanel">
+                <div class="row text-center" style="padding-top: 15px; padding-bottom: 15px;">
+                  <canvas id="numberCompSeniorChart"></canvas>
+                  <script>
+                    var ctx = document.getElementById('numberCompSeniorChart');
+                    var numberCompSeniorChart = new Chart(ctx ,{
+                      "type":"line",
+                      "data": {
+                                labels: ["yearX","yearY","yearZ","yearW","yearG","yearF","yearT"],
+                                datasets:[{
+                                            label:"# competitions",
+                                            data:[45,53,58,61,63,64,66,68],
+                                            fill:false,
+                                            borderColor: 'rgb(123,255,0)',
+                                            lineTension:0.1
+                                          }]
+                              },
+                                options: {
+                                  responsive: true,
+                                  legend: {
+                                    position: 'bottom',
+                                  },
+                                  title: {
+                                    display: true,
+                                    text: '# competitions done per year'
+                                  },
+                                  animation: {
+                                    animateScale: true
+                                  }
+                                }
+                              }
+                                );
+                  </script>
+                </div>
+              </div>
+
+              <!-- COUNT ALL THE COMPETITIONS DONE BY THE ATHLETE -->
+        			<!-- IF NO DATA, DISABLE ALL MENU AND DELETE ALL CONTENT OF .tab-pane.row -->
+              <div class="tab-pane fade" id="numberCompTotal" role="tabpanel">
+                <div class="row text-center" style="padding-top: 15px; padding-bottom: 15px;">
+                  <canvas id="numberCompTotalChart"></canvas>
+                  <script>
+                    var ctx = document.getElementById('numberCompTotalChart');
+                    var numberCompTotalChart = new Chart(ctx ,{
+                      'type':'line',
+                      'data': {
+                                labels: ['yearX','yearY','yearZ','yearW','yearG','yearF','yearT'],
+                                datasets:[{
+                                            label:'# competitions',
+                                            data:[45,53,58,61,63,64,66,68],
+                                            fill:false,
+                                            borderColor: 'rgb(123,255,0)',
+                                            lineTension:0.1
+                                          }]
+                              },
+                                options: {
+                                  responsive: true,
+                                  legend: {
+                                    position: 'bottom',
+                                  },
+                                  title: {
+                                    display: true,
+                                    text: '# competitions done per year'
+                                  },
+                                  animation: {
+                                    animateScale: true
+                                  }
+                                }
+                              }
+                                );
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ANALYSIS OF RESULTS ACCROSS YEARS AND AGE CATEGORY -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center rowP">
+          <div class="bg-white shadow-sm border-blue" style="width: 100%; height: 100%;">
+            <div class="list-group list-group-horizontal" id="listYearlyBest" role="yearlyBestList">
+              <li class="list-group-item list-group-item-action active" data-toggle="list" href="#yearlyBestYouth" role="tab">
+                Youth&nbsp;&nbsp;<span class="badge badge-primary badge-pill">24</span>
+                <!-- The number in the badge represent the total number of competitions done as a youth. -->
+              </li>
+              <li class="list-group-item list-group-item-action" data-toggle="list" href="#yearlyBestJunior" role="tab">
+                Junior&nbsp;&nbsp;<span class="badge badge-primary badge-pill">49</span>
+                <!-- The number in the badge represent the total number of competitions done as a junior. -->
+              </li>
+              <li class="list-group-item list-group-item-action" data-toggle="list" href="#yearlyBestSenior" role="tab">
+                Senior&nbsp;&nbsp;<span class="badge badge-primary badge-pill">52</span>
+                <!-- The number in the badge represent the total number of competitions done as a senior. -->
+              </li>
+              <li class="list-group-item list-group-item-action" data-toggle="list" href="#yearlyBestTotal" role="tab">
+                All&nbsp;&nbsp;<span class="badge badge-primary badge-pill">125</span>
+                <!-- The number in the badge represent the total number of competitions done. -->
+              </li>
+            </div>
+
+            <div class="tab-content text-center">
+            	<!-- TAKE ALL THE BODYWEIGHTS, SNATCHES, AND CLEAN&JERK RESULTS OF THE ATHLETE AS A YOUTH -->
+        			<!-- IF NO DATA, DISABLE YOUTH MENU AND DELETE YOUTH CONTENT OF .tab-pane.row -->
+              <div class="tab-pane fade show active" id="yearlyBestYouth" role="tabpanel">
+                <div class="row text-center" style="padding: 15px;">
+                  <canvas id="yearlyBestYouthChart"></canvas>
+                  <script>
+                    var ctx = document.getElementById('yearlyBestYouthChart');
+                    var yearlyBestYouthChart = new Chart(ctx ,{
+                      "type":"line",
+                      "data": {
+                                labels: ["yearX","yearY","yearZ","yearW","yearG","yearF","yearT"],
+                                datasets:[{
+                                            label:"Bodyweight",
+                                            data:[45,53,58,61,63,64,66,68],
+                                            fill:false,
+                                            borderColor: 'rgb(123,255,0)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Snatch",
+                                            data:[145,153,158,161,163,164,166,168],
+                                            fill:false,
+                                            borderColor: 'rgb(0,123,255)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Clean&Jerk",
+                                            data:[185,193,198,201,203,204,206,208],
+                                            fill:false,
+                                            borderColor: 'rgb(255,0,123)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Total",
+                                            data:[385,393,398,401,404,404,406,408],
+                                            fill:false,
+                                            borderColor: 'rgba(0, 0, 0, 1)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Sinclair",
+                                            data:[452,435,455,457,455,456,458,453],
+                                            fill:false,
+                                            borderColor: 'rgba(102, 16, 242, 1)',
+                                            lineTension:0.1
+                                          }]
+                              },
+                                options: {
+                                  responsive: true,
+                                  legend: {
+                                    position: 'bottom',
+                                  },
+                                  title: {
+                                    display: true,
+                                    text: 'Best results accross the years'
+                                  },
+                                  animation: {
+                                    animateScale: true
+                                  }
+                                }
+                              }
+                                );
+                  </script>
+                </div>
+              </div>
+
+              <!-- TAKE ALL THE BODYWEIGHTS, SNATCHES, AND CLEAN&JERK RESULTS OF THE ATHLETE AS A JUNIOR -->
+        			<!-- IF NO DATA, DISABLE JUNIOR MENU AND DELETE JUNIOR CONTENT OF .tab-pane.row -->
+              <div class="tab-pane fade" id="yearlyBestJunior" role="tabpanel">
+                <div class="row text-center" style="padding-top: 15px; padding-bottom: 15px;">
+                  <canvas id="yearlyBestJuniorChart"></canvas>
+                  <script>
+                    var ctx = document.getElementById('yearlyBestJuniorChart');
+                    var yearlyBestJuniorChart = new Chart(ctx ,{
+                      "type":"line",
+                      "data": {
+                                labels: ["yearX","yearY","yearZ","yearW","yearG","yearF","yearT"],
+                                datasets:[{
+                                            label:"Bodyweight",
+                                            data:[45,53,58,61,63,64,66,68],
+                                            fill:false,
+                                            borderColor: 'rgb(123,255,0)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Snatch",
+                                            data:[145,153,158,161,163,164,166,168],
+                                            fill:false,
+                                            borderColor: 'rgb(0,123,255)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Clean&Jerk",
+                                            data:[185,193,198,201,203,204,206,208],
+                                            fill:false,
+                                            borderColor: 'rgb(255,0,123)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Total",
+                                            data:[385,393,398,401,404,404,406,408],
+                                            fill:false,
+                                            borderColor: 'rgba(0, 0, 0, 1)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Sinclair",
+                                            data:[452,435,455,457,455,456,458,453],
+                                            fill:false,
+                                            borderColor: 'rgba(102, 16, 242, 1)',
+                                            lineTension:0.1
+                                          }]
+                              },
+                                options: {
+                                  responsive: true,
+                                  legend: {
+                                    position: 'bottom',
+                                  },
+                                  title: {
+                                    display: true,
+                                    text: 'Best results accross the years'
+                                  },
+                                  animation: {
+                                    animateScale: true
+                                  }
+                                }
+                              }
+                                );
+                  </script>
+                </div>
+              </div>
+
+              <!-- TAKE ALL THE BODYWEIGHTS, SNATCHES, AND CLEAN&JERK RESULTS OF THE ATHLETE AS A SENIOR -->
+        			<!-- IF NO DATA, DISABLE SENIOR MENU AND DELETE SENIOR CONTENT OF .tab-pane.row -->
+              <div class="tab-pane fade" id="yearlyBestSenior" role="tabpanel">
+                <div class="row text-center" style="padding-top: 15px; padding-bottom: 15px;">
+                  <canvas id="yearlyBestSeniorChart"></canvas>
+                  <script>
+                    var ctx = document.getElementById('yearlyBestSeniorChart');
+                    var yearlyBestSeniorChart = new Chart(ctx ,{
+                      "type":"line",
+                      "data": {
+                                labels: ["yearX","yearY","yearZ","yearW","yearG","yearF","yearT"],
+                                datasets:[{
+                                            label:"Bodyweight",
+                                            data:[45,53,58,61,63,64,66,68],
+                                            fill:false,
+                                            borderColor: 'rgb(123,255,0)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Snatch",
+                                            data:[145,153,158,161,163,164,166,168],
+                                            fill:false,
+                                            borderColor: 'rgb(0,123,255)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Clean&Jerk",
+                                            data:[185,193,198,201,203,204,206,208],
+                                            fill:false,
+                                            borderColor: 'rgb(255,0,123)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Total",
+                                            data:[385,393,398,401,404,404,406,408],
+                                            fill:false,
+                                            borderColor: 'rgba(0, 0, 0, 1)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Sinclair",
+                                            data:[452,435,455,457,455,456,458,453],
+                                            fill:false,
+                                            borderColor: 'rgba(102, 16, 242, 1)',
+                                            lineTension:0.1
+                                          }]
+                              },
+                                options: {
+                                  responsive: true,
+                                  legend: {
+                                    position: 'bottom',
+                                  },
+                                  title: {
+                                    display: true,
+                                    text: 'Best results accross the years'
+                                  },
+                                  animation: {
+                                    animateScale: true
+                                  }
+                                }
+                              }
+                                );
+                  </script>
+                </div>
+              </div>
+
+              <!-- TAKE ALL THE TOTAL RESULTS OF THE ATHLETE AS A YOUTH, AS A JUNIOR AND AS A SENIOR -->
+        			<!-- IF NO DATA, DISABLE ALL MENU AND DELETE ALL CONTENT OF .tab-pane.row -->
+              <div class="tab-pane fade" id="yearlyBestTotal" role="tabpanel">
+                <div class="row text-center" style="padding-top: 15px; padding-bottom: 15px;">
+                  <canvas id="yearlyBestTotalChart"></canvas>
+                  <script>
+                    var ctx = document.getElementById('yearlyBestTotalChart');
+                    var yearlyBestTotalChart = new Chart(ctx ,{
+                      'type':'line',
+                      'data': {
+                                labels: ['yearX','yearY','yearZ','yearW','yearG','yearF','yearT'],
+                                datasets:[{
+                                            label:"Bodyweight",
+                                            data:[45,53,58,61,63,64,66,68],
+                                            fill:false,
+                                            borderColor: 'rgb(123,255,0)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Snatch",
+                                            data:[145,153,158,161,163,164,166,168],
+                                            fill:false,
+                                            borderColor: 'rgb(0,123,255)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Clean&Jerk",
+                                            data:[185,193,198,201,203,204,206,208],
+                                            fill:false,
+                                            borderColor: 'rgb(255,0,123)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Total",
+                                            data:[385,393,398,401,404,404,406,408],
+                                            fill:false,
+                                            borderColor: 'rgba(0, 0, 0, 1)',
+                                            lineTension:0.1
+                                          },
+                                          {
+                                            label:"Sinclair",
+                                            data:[452,435,455,457,455,456,458,453],
+                                            fill:false,
+                                            borderColor: 'rgba(102, 16, 242, 1)',
+                                            lineTension:0.1
+                                          }]
+                              },
+                                options: {
+                                  responsive: true,
+                                  legend: {
+                                    position: 'bottom',
+                                  },
+                                  title: {
+                                    display: true,
+                                    text: 'Best results accross the years'
+                                  },
+                                  animation: {
+                                    animateScale: true
+                                  }
+                                }
+                              }
+                                );
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TABLE : ALL COMPETITIONS OF THE ATHLETE WITH RESULTS (max 5) -->
+      <!-- User should be able to access the profile of a competition when he clicks on the name of a competition in the table. -->
+      <!-- Same for country, click on a country give access to the country profile. -->
+      <div class="row rowP">
+        <div class="col text-center table-responsive">
+          <!-- List of the competitions where the athlete competed (show 5 max) -->
+          <!-- "See more" options at the end, when click, will redirect the user to the athletes page but with a filter to show only the athlete in the profile and in decrease order for the total (best total in first). -->
+          <table class="table bg-white shadow-sm">
+          	<caption>List of competitions of <i>John Doe</i></caption>
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Competition</th>
+                <th scope="col">Country</th>
+                <th scope="col">BW&nbsp;<span class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Bodyweight"></th>
+                <th scope="col">Snatch</th>
+                <th scope="col">SR&nbsp;<span class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Snatch ratio"></span></th>
+                <th scope="col">CJ&nbsp;<span class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Clean & Jerk"></span></th>
+                <th scope="col">CJR&nbsp;<span class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Clean & Jerk ratio"></span></th>
+                <th scope="col">Total</th>
+                <th scope="col">Total ratio&nbsp;<span class="fas fa-info-circle" data-toggle="tooltip" data-placement="top" title="Total ratio"></span></th>
+                <th scope="col">Sinclair</th>
+                <th scope="col">Rank</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>####-##-##</td>
+                <td>CompetitionX</td>
+                <td>CountryX</td>
+                <td>##,##</td>
+                <td>###</td>
+                <td>##,##</td>
+                <td>###</td>
+                <td>##,##</td>
+                <td>###</td>
+                <td>##,##</td>
+                <td>###</td>
+                <td>##</td>
+              </tr>
+              <tr>
+                <td>####-##-##</td>
+                <td>CompetitionY</td>
+                <td>CountryY</td>
+                <td>##,##</td>
+                <td>###</td>
+                <td>##,##</td>
+                <td>###</td>
+                <td>##,##</td>
+                <td>###</td>
+                <td>##,##</td>
+                <td>###</td>
+                <td>##</td>
+              </tr>
+              <tr>
+                <td>####-##-##</td>
+                <td>CompetitionZ</td>
+                <td>CountryZ</td>
+                <td>##,##</td>
+                <td>###</td>
+                <td>##,##</td>
+                <td>###</td>
+                <td>##,##</td>
+                <td>###</td>
+                <td>##,##</td>
+                <td>###</td>
+                <td>##</td>
+              </tr>
+              <tr>
+                <td>####-##-##</td>
+                <td>CompetitionW</td>
+                <td>CountryW</td>
+                <td>##,##</td>
+                <td>###</td>
+                <td>##,##</td>
+                <td>###</td>
+                <td>##,##</td>
+                <td>###</td>
+                <td>##,##</td>
+                <td>###</td>
+                <td>##</td>
+              </tr>
+              <tr>
+                <td>####-##-##</td>
+                <td>CompetitionW</td>
+                <td>CountryG</td>
+                <td>##,##</td>
+                <td>###</td>
+                <td>##,##</td>
+                <td>###</td>
+                <td>##,##</td>
+                <td>###</td>
+                <td>##,##</td>
+                <td>###</td>
+                <td>##</td>
+              </tr>
+              <tr>
+                <td colspan="12">
+                  <a href="#">
+                    <h6 class="text-center">See more</h6>
+                  </a>
+                </td>                
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer text-dark font-small bg-white">
+      <div class="container text-center">
+        © 2020 Copyright<a href="https://mdbootstrap.com/">&nbsp;4crosslifters.com</a>
+      </div>
+    </footer>
+    <!-- Footer -->
+  </body>
+</html>
