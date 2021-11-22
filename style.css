@@ -1057,7 +1057,7 @@ a:active {
   }
 }
 
-/* COUNTRY PAGE */
+/* COUNTRIES/ATHLETES/COMPETITIONS PAGE */
 .colPad {
   padding: 15px;
 }
@@ -1072,9 +1072,10 @@ a:active {
 }
 
 .containerPad {
-  padding-left: 30px;
-  padding-right: 30px;
-  margin-bottom: 75px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 45px;
+  /*margin-bottom: 75px;*/
 }
 
   /* Border top */
