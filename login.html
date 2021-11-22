@@ -8,28 +8,26 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    
+    <!-- Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    
+    <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
-    <!-- FONT-AWESOME -->
-    <script src="https://kit.fontawesome.com/de0af47863.js" crossorigin="anonymous"></script>
 
     <!-- SCRIPTS -->
       <!-- For side menu -->
       <script src="sideMenu.js"></script> 
 
-      <!-- For search bar -->
-      <script src="searchBar.js"></script> 
-
-      <!-- For changing text -->
-      <script src="changingText.js"></script> 
+    <!-- FONT-AWESOME -->
+    <script src="https://kit.fontawesome.com/de0af47863.js" crossorigin="anonymous"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="style.css">
 
-    <title>HALTEROPHILE - About</title>
+    <title>HALTEROPHILE - Login</title>
   </head>
 
   <body>
@@ -49,8 +47,8 @@
           <li class="nav-item">
             <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="about.html">ABOUT</a>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="about.html">ABOUT</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact.html">CONTACT</a>
@@ -73,40 +71,9 @@
           </form>
           
           <!-- If user is not connected -->
-          <li class="dropdown order-1">
-            <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-success dropdown-toggle">
-              <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;Login <span class="caret"></span>
-            </button>
-            
-            <ul class="dropdown-menu dropdown-menu-right mt-2">
-              <li class="px-3 py-2">
-                <form action="" class="form">
-                  <div class="form-group">
-                    <input id="emailInput" placeholder="Email" class="form-control form-control-sm" type="email" required="">
-                  </div>
-
-                  <div class="form-group">
-                    <input id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="password" required="">
-                  </div>
-
-                  <!-- When click, if the credentials are good, the user is redirected to his profile -->
-                  <div class="form-group">
-                    <button type="submit" class="btn login-button btn-block">Login</button>
-                  </div>
-
-                  <div class="dropdown-divider"></div>
-
-                  <div class="form-group text-center">
-                    <small><a href="register.html">Not a member? Register!</a></small>
-                  </div>
-
-                  <div class="form-group text-center">
-                    <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot password?</a></small>
-                  </div>
-                </form>
-              </li>
-            </ul>
-          </li>
+          <a href="login.html" role="button" id="dropdownMenu1" class="btn btn-outline-success">
+            <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;LOGIN</span>
+          </a>
 
           <!-- If user is connected -->
         <!--
@@ -163,7 +130,43 @@
     </nav>
 
     <!-- CONTENT -->
+    <!-- https://codepen.io/anandaprojapati/pen/GmrwYE -->
+    <div id="form" class="form_wrapper mx-auto">
+      <div class="form_container h-100">
+        <div class="title_container">
+          <h2>Welcome on Halterophile !</h2>
+          <small>We don't lift heavy bars several times per week to look hot.</small>
+        </div>
+        <div class="row clearfix">
+          <div style="width: 100%;">
+                <form action="" class="form">
+                  <div class="form-group">
+                    <input id="emailInput" placeholder="Email" class="form-control form-control-sm" type="email" required="">
+                  </div>
 
+                  <div class="form-group">
+                    <input id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="password" required="">
+                  </div>
+
+                  <!-- When click, if the credentials are good, the user is redirected to his profile -->
+                  <div class="form-group">
+                    <button type="submit" class="btn login-button btn-block">Login</button>
+                  </div>
+
+                  <div class="dropdown-divider"></div>
+
+                  <div class="form-group text-center">
+                    <small><a href="register.html">Not a member? Register!</a></small>
+                  </div>
+
+                  <div class="form-group text-center">
+                    <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot password?</a></small>
+                  </div>
+                </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="footer text-dark font-small bg-white">

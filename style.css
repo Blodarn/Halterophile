@@ -23,8 +23,7 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 60px;
-  line-height: 60px;
+  padding: 15px;
 }
 
 footer {
@@ -192,18 +191,24 @@ a:active {
   margin-left: 23px;
 }
 
+/* MENU */
+.btn-outline-success {
+  background-color: rgb(255, 255, 255, 0.7);
+}
+
 @media (max-width: 991.98px) {
   .offcanvas-collapse {
     position: fixed;
     top: 56px; /* Height of navbar */
     bottom: 0;
     left: 100%;
-    width: 100%;
+    width: 200px;
     padding-right: 1rem;
     padding-left: 1rem;
     overflow-y: auto;
     visibility: hidden;
-    background-color: #fff;
+    /*background-color: rgba(0, 0, 0, 0.5);*/
+    /*box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);*/
     transition: visibility .3s ease-in-out, -webkit-transform .3s ease-in-out;
     transition: transform .3s ease-in-out, visibility .3s ease-in-out;
     transition: transform .3s ease-in-out, visibility .3s ease-in-out, -webkit-transform .3s ease-in-out;
@@ -215,7 +220,12 @@ a:active {
   }
 }
 
-/* MENU */
+.offcanvas-collapse.open {
+  visibility: visible;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
 .nav-scroller {
   position: relative;
   z-index: 2;
@@ -263,12 +273,6 @@ a:active {
 .lh-100 { line-height: 1; }
 .lh-125 { line-height: 1.25; }
 .lh-150 { line-height: 1.5; }
-
-.offcanvas-collapse.open {
-  visibility: visible;
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
-}
 
 .navbar .dropdown-menu .form-control {
     width: 200px;
@@ -1074,7 +1078,7 @@ a:active {
 .containerPad {
   padding-left: 10px;
   padding-right: 10px;
-  margin-bottom: 55px;
+  margin-bottom: 15px;
 }
 
   /* Border top */
