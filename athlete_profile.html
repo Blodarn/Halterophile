@@ -66,7 +66,7 @@
             </div>
           </li>-->
 
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="athletes.html">ATHLETES</a>
           </li>
           <li class="nav-item">
@@ -143,7 +143,7 @@
     <!-- HEADER -->
     <!-- DATE COME FROM ATHLETE DATABASE -->
     <header id="profile" class="header">
-      <div class="row text-center text-uppercase" style="margin-bottom: 25px;">
+      <div class="row text-center text-uppercase">
         <div class="col-12 col-sm-3 col-md-2 col-lg-2 col-xl-1" style="margin-bottom: 25px;">
         	<div class="row">
 	        	<!-- NOTE BASED ON THE ATHLETE PROFILE (AVERAGE OF ALL THE CHARACTERISTICS) -->
@@ -182,7 +182,7 @@
 
         <!-- ATHLETE SHORT BIO -->
         <!-- IF SOCIAL LINK IS MISSING, HIDE ICON -->
-        <div class="col-12 col-sm-5 col-md-7 col-lg-3 col-xl-3 text-sm-left" style="border-right: 1px solid #fff; margin-bottom: 25px;">
+        <div class="col-12 col-sm-5 col-md-7 col-lg-3 col-xl-3 text-sm-left" style="margin-bottom: 25px;">
           <h1><i class="fab fa-canadian-maple-leaf">&nbsp;&nbsp;</i>John Doe</h1>
           
           <!-- Fetch date of birth and country of birth of the athlete -->
@@ -233,7 +233,7 @@
         </div>
 
         <!-- ATHLETE BEST PERFORMANCE ACCROSS ALL HIS COMPETITIONS -->
-        <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-6" style="padding-right: 30px;">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-6" style="padding-right: 45px;">
         	<div class="row">
         		<div class="col" style="padding-left: 0px; padding-right: 0px;">
 	        		<table class="table table-borderless bg-white">
@@ -261,7 +261,7 @@
 
           <h3 class="text-uppercase">Best</h3>
 
-          <hr>
+          <hr/>
 
           <div class="row">
             <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -1805,7 +1805,7 @@
           <!-- List of the competitions where the athlete competed (show 5 max) -->
           <!-- "See more" options at the end, when click, will redirect the user to the athletes page but with a filter to show only the athlete in the profile and in decrease order for the total (best total in first). -->
           <table class="table bg-white shadow-sm">
-          	<caption>List of competitions of <i>John Doe</i></caption>
+          	<caption>List of competitions of <a href="#profile"><i>John Doe</i></a></caption>
             <thead class="thead-dark">
               <tr>
                 <th scope="col">Date</th>
@@ -1904,14 +1904,15 @@
           </table>
         </div>
       </div>
-    </div>
 
-    <!-- FOOTER -->
-    <footer class="footer text-dark font-small bg-white">
-      <div class="container text-center">
-        © 2022 Copyright<a href="https://HALTEROPHILE.COM/">&nbsp;HALTEROPHILE.COM</a>
+      <!-- FOOTER -->
+      <div class="row footer text-dark font-small">
+          <div class="container text-center">
+            © 2022 COPYRIGHT<a href="https://HALTEROPHILE.com/">&nbsp;HALTEROPHILE.COM</a></br>
+            Questions ? Request ? Contact us at <a href="mailto:info@halterophile.com">info@halterophile.com</a> or write directly to us via <a href="contact.html">the form</a>.
+          </div>
       </div>
-    </footer>
-    <!-- Footer -->
+      <!-- FOOTER -->
+    </div>
   </body>
 </html>

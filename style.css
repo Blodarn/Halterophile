@@ -13,14 +13,15 @@ body {
   background-size: cover;
 }
 
-body#countryProfile, body#athleteProfile, body#competitionProfile, body#countries, body#competitions, body#athletes, body#notifications {
+body#countryProfile, body#athleteProfile, body#competitionProfile, body#countries,
+body#competitions, body#athletes, body#notifications {
   background-color: #f8f9fa !important;
   background-image: none !important;
 }
 
 /* FOOTER */
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   padding: 15px;
@@ -251,9 +252,25 @@ a:active {
   font-size: 1.3rem;
 }
 
-.nav-item .nav-link, footer a {
+.navbar-light .navbar-brand {
+  color: rgba(0,0,0,.7);
+}
+
+.navbar-light .navbar-brand:hover {
+  border-top: 2px solid rgba(0,0,0,.7);
+  border-bottom: 2px solid rgba(0,0,0,.7);
+}
+
+.navbar-brand, .nav-item .nav-link, footer a {
   color: rgb(255, 255, 255, 0.7);
   text-shadow: 0 0.1rem 0.4rem rgba(191, 191, 191, 0.9);
+}
+
+.navbar-brand:hover {
+  color: rgb(255, 255, 255);
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  text-shadow: 0 0.1rem 0.4rem rgba(191, 191, 191, 0.4);
 }
 
 .nav-item .nav-link:hover, footer a:hover {
@@ -295,7 +312,7 @@ a:active {
   max-width: 360px;
   height: 60px;
   border-radius: 120px;
-  margin: 65px auto 25px auto
+  margin: 45px auto 45px auto
 }
 .search-icon, .go-icon {
   position: absolute;
