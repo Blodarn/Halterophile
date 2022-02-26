@@ -24,6 +24,10 @@
     <!-- FONT-AWESOME -->
     <script src="https://kit.fontawesome.com/de0af47863.js" crossorigin="anonymous"></script>
 
+    <!-- DATA-TABLES -->
+    <!--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.3/cr-1.5.5/r-2.2.9/datatables.min.css"/> 
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/v/bs5/dt-1.11.3/cr-1.5.5/r-2.2.9/datatables.min.js"></script>-->
+
     <!-- SCRIPTS -->
       <!-- For side menu -->
       <script src="sideMenu.js"></script>
@@ -33,6 +37,9 @@
 
       <!-- For adding link on each row of the table -->
       <script src="rowLinks.js"></script>
+
+      <!-- For initializing data-tables -->
+      <!--<script src="dataTables.js"></script>-->
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -136,7 +143,7 @@
         <!-- "See more" options at the end show more data when clicked (10 by 10). No refresh of the page. -->
         <!-- Each row is clickable and redirect the user to the right athlete profile. -->
         <div class="col table-responsive">
-          <table id="tableAllCompetitions" class="table table-hover bg-white shadow-sm">
+          <table id="tableAllAthletes" class="table table-striped table-hover bg-white shadow-sm display">
             <thead class="thead-dark">
               <tr>
                 <th scope="col">First name</th>
