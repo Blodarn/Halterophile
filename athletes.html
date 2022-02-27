@@ -147,10 +147,11 @@
         <!-- "See more" options at the end show more data when clicked (10 by 10). No refresh of the page. -->
         <!-- Each row is clickable and redirect the user to the right athlete profile. -->
         <div class="col table-responsive">
-          <div id='test-table'></div>
+          <!--
+          <div id='data_competitions_table'></div>
           <script>
-            jspreadsheet(document.getElementById('test-table'), {
-                url:'https://www.halterophile.com/jspreadsheet/Data_suivi_competitions.json',
+            jspreadsheet(document.getElementById('data_competitions_table'), {
+                url:'https://www.halterophile.com/jspreadsheet/data_competitions.json',
                 csvHeaders:true,
                 columns:[
                     { type:'text', width:300 },
@@ -169,7 +170,8 @@
                 ]
             });
           </script>
-
+          -->
+          
           <table id="tableAllAthletes" class="table table-striped table-hover bg-white shadow-sm display">
             <thead class="thead-dark">
               <tr>
