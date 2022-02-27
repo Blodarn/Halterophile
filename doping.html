@@ -45,7 +45,7 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="style.css">
 
-    <title>HALTEROPHILE - Athletes</title>
+    <title>HALTEROPHILE - Doping</title>
   </head>
 
   <body id="athletes">
@@ -63,10 +63,10 @@
 
       <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="athletes.html">ATHLETES</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="athletes.html">DOPING</a>
           </li>
           <li class="nav-item">
@@ -150,7 +150,7 @@
           <div id='test-table'></div>
           <script>
             jspreadsheet(document.getElementById('test-table'), {
-                url:'https://www.halterophile.com/jspreadsheet/Data_suivi_competitions.json',
+                url:'https://www.halterophile.com/jspreadsheet/CCES_Doping_Canada_Stats.json',
                 csvHeaders:true,
                 columns:[
                     { type:'text', width:300 },
