@@ -148,8 +148,8 @@
         <!-- List of athletes (show 30 max) -->
         <!-- "See more" options at the end show more data when clicked (10 by 10). No refresh of the page. -->
         <!-- Each row is clickable and redirect the user to the right athlete profile. -->
-        <div class="col">
-          <table id="doping_stats_table" class="display table-responsive">
+        <div class="col table-responsive">
+          <table id="doping_stats_table" class="display">
             <thead>
               <tr>
                   <th>Beginning</th>
@@ -167,10 +167,7 @@
           <script>
             $(document).ready(function() {
               $('#doping_stats_table').DataTable( {
-                "ajax": {
-                  "url": "https://www.halterophile.com/data/CCES_Doping_Canada_Stats.json",
-                  "type": "POST"
-                },
+                "ajax": "https://www.halterophile.com/data/CCES_Doping_Canada_Stats.txt",
                 "columns": [
                 { "data": "Beginning" },
                 { "data": "End" },
