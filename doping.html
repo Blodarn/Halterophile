@@ -17,9 +17,6 @@
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-    <!-- High charts -->
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-
     <!-- FONT-AWESOME -->
     <script src="https://kit.fontawesome.com/de0af47863.js" crossorigin="anonymous"></script>
 
@@ -36,11 +33,16 @@
       <!-- For initializing data-tables -->
       <!--<script src="dataTables.js"></script>-->
 
-    <!-- JsSpreadsheet -->
+    <!-- DataTables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+
+    <!-- JsSpreadsheet
     <script src="https://bossanova.uk/jspreadsheet/v4/jexcel.js"></script>
     <link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jexcel.css" type="text/css" />
     <script src="https://jsuites.net/v4/jsuites.js"></script>
     <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
+    -->
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -147,7 +149,28 @@
         <!-- "See more" options at the end show more data when clicked (10 by 10). No refresh of the page. -->
         <!-- Each row is clickable and redirect the user to the right athlete profile. -->
         <div class="col table-responsive">
+
+          <script>
+            $(document).ready( function () {
+              $('#doping_stats_table').DataTable();
+            } );
+
+            var jsonData = [
+                { "meta": { "version": 1, "type": "test" } }
+            ];
+
+            $('#table').DataTable({
+                "data": 'https://www.halterophile.com/jspreadsheet/CCES_Doping_Canada_Stats.json',
+                "columns": [
+                  { "data": "meta.type" },
+                  { "data": "meta.version" }
+                ]
+            });
+          </script>
+
           <div id="doping_stats_table" tabindex="1"></div>
+
+          <!--
           <script>
             jspreadsheet(document.getElementById('doping_stats_table'), {
                 url:'https://www.halterophile.com/jspreadsheet/CCES_Doping_Canada_Stats.json',
@@ -175,7 +198,8 @@
                   }
                 }
             });
-          </script>         
+          </script>
+          -->        
         </div>
       </div>
 
