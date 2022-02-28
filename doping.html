@@ -153,7 +153,19 @@
           <script>
             $(document).ready(function() {
               $('#doping_stats_table').DataTable( {
-                "ajax": "https://www.halterophile.com/jspreadsheet/CCES_Doping_Canada_Stats.json"
+                "ajax": {
+                  "url": "https://www.halterophile.com/jspreadsheet/CCES_Doping_Canada_Stats.json"
+                  },
+                  "columns": [
+                  { "data": "Beginning" },
+                  { "data": "End" },
+                  { "data": "Sport" },
+                  { "data": "IC" },
+                  { "data": "OC" },
+                  { "data": "Total" },
+                  { "data": "Scope" },
+                  { "data": "Violation" }
+                  ]
               } );
             } );
           </script>
