@@ -152,7 +152,10 @@
             jspreadsheet(document.getElementById('doping_stats_table'), {
                 url:'https://www.halterophile.com/jspreadsheet/CCES_Doping_Canada_Stats.json',
                 search:true,
-                pagination:10,
+                tableOverflow:true,
+                tableWidth: "100%",
+                lazyLoading:true,
+                loadingSpin:true,
                 columns:[
                     { type:'calendar', title: "Beginning", width:100 },
                     { type:'calendar', title: "End", width:100 },
@@ -164,7 +167,12 @@
                     { type:'numeric', title: "Violation", width:100 }
                 ],
                 filters: true,
-                columnSorting: true
+                columnSorting: true,
+                updateTable: function(el, cell, x, y, source, value, id) {
+                  if (x == 2 && y == 2) {
+                    cell.classList.add('readonly');
+                  }
+                }
             });
           </script>         
         </div>
