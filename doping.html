@@ -29,6 +29,15 @@
       <script src="rowLinks.js"></script>
 
     <!-- DataTables -->
+    <!--  FixedHeader : Sticky header and / or footer for the table v3.2.2
+          KeyTable : Keyboard navigation of cells in a table, just like a spreadsheet v2.6.4
+          Responsive : Dynamically show and hide columns based on the browser size v2.2.9
+          RowGroup : Show similar data grouped together by a custom data point v1.1.4
+          RowReorder : Click-and-drag reordering of rows v1.2.8
+          Scroller : Virtual rendering of a scrolling table for large data sets v2.0.5
+          SearchBuilder : User defined complex search builder v1.3.2
+          SearchPanes : Search panels for DataTables allowing rapid and customisable filtering v2.0.0
+    -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.5/fh-3.2.2/kt-2.6.4/r-2.2.9/sc-2.0.5/sb-1.3.2/sp-2.0.0/datatables.min.css"/>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.5/fh-3.2.2/kt-2.6.4/r-2.2.9/sc-2.0.5/sb-1.3.2/sp-2.0.0/datatables.min.js"></script>
 
@@ -165,7 +174,10 @@
                 { "data": "Total" },
                 { "data": "Scope" },
                 { "data": "Violation" }
-                ]
+                ],
+                fixedHeader: true,
+                responsive: true,
+                keys: true
               } );
             } );
           </script>
