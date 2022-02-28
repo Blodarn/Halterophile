@@ -151,21 +151,11 @@
         <div class="col table-responsive">
 
           <script>
-            $(document).ready( function () {
-              $('#doping_stats_table').DataTable();
+            $(document).ready(function() {
+              $('#doping_stats_table').DataTable( {
+                "ajax": "https://www.halterophile.com/jspreadsheet/CCES_Doping_Canada_Stats.json"
+              } );
             } );
-
-            var jsonData = [
-                { "meta": { "version": 1, "type": "test" } }
-            ];
-
-            $('#table').DataTable({
-                "data": 'https://www.halterophile.com/jspreadsheet/CCES_Doping_Canada_Stats.json',
-                "columns": [
-                  { "data": "meta.type" },
-                  { "data": "meta.version" }
-                ]
-            });
           </script>
 
           <div id="doping_stats_table" tabindex="1"></div>
