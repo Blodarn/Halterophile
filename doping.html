@@ -149,9 +149,8 @@
         <div class="col table-responsive">
           <div id="doping_stats_table" tabindex="1" class="jexcel_container"></div>
           <script>
-            /*jspreadsheet(document.getElementById('doping_stats_table'), {
+            jspreadsheet(document.getElementById('doping_stats_table'), {
                 url:'https://www.halterophile.com/jspreadsheet/CCES_Doping_Canada_Stats.json',
-                csvHeaders:true,
                 search:true,
                 pagination:10,
                 columns:[
@@ -166,20 +165,7 @@
                 ],
                 filters: true,
                 columnSorting: true,
-            });*/
-
-    jspreadsheet(document.getElementById('doping_stats_table'), {
-        url:'https://www.halterophile.com/jspreadsheet/CCES_Doping_Canada_Stats.json',
-        columns: [
-            { type:'calendar', title: "Beginning", width:100 },
-                    { type:'calendar', title: "End", width:100 },
-            { type: 'calendar', title: 'Available', width: 200 },
-            { type: 'image', title: 'Photo', width: 120 },
-            { type: 'checkbox', title: 'Stock', width: 80 },
-            { type: 'numeric', title: 'Price', width: 100, mask: '$ #.##,00', decimal: ',' },
-            { type: 'color', width: 100, render: 'square', }
-        ]
-    });
+            });
           </script>         
         </div>
       </div>
