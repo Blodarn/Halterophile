@@ -167,7 +167,10 @@
           <script>
             $(document).ready(function() {
               $('#doping_stats_table').DataTable( {
-                "ajax": "https://www.halterophile.com/data/CCES_Doping_Canada_Stats.json",
+                "ajax": {
+                  "url": "https://www.halterophile.com/data/CCES_Doping_Canada_Stats.json",
+                  "type": "POST"
+                },
                 "columns": [
                 { "data": "Beginning" },
                 { "data": "End" },
