@@ -171,8 +171,8 @@
     jspreadsheet(document.getElementById('doping_stats_table'), {
         url:'https://www.halterophile.com/jspreadsheet/CCES_Doping_Canada_Stats.json',
         columns: [
-            { type: 'text', title: 'Car', width: 120 },
-            { type: 'dropdown', title: 'Make', width: 200, source: ["Alfa Romeo", "Audi", "Bmw"] },
+            { type: 'calendar', title: 'Car', width: 120 },
+            { type: 'calendar', title: 'Make', width: 200, source: ["Alfa Romeo", "Audi", "Bmw"] },
             { type: 'calendar', title: 'Available', width: 200 },
             { type: 'image', title: 'Photo', width: 120 },
             { type: 'checkbox', title: 'Stock', width: 80 },
