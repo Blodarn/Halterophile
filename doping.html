@@ -79,15 +79,15 @@
 
       <!-- Right side -->
       <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
-        <!-- This search bar search in the complete database -->
+        <!-- This search bar search in the complete database 
         <form class="form-inline" id="searchButton">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        </form>
+          <div id="doping_stats_table_filter" class="dataTables_filter"><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" aria-controls="doping_stats_table"></div>
+        </form>-->
 
-        <!-- If user is not connected -->
+        <!-- If user is not connected
         <a href="login.html" role="button" id="dropdownMenu1" class="btn btn-outline-success">
           <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;LOGIN</span>
-        </a>
+        </a>-->
 
         <!-- If user is connected -->
         <!--<li class="dropdown order-2">
@@ -177,7 +177,11 @@
                 ],
                 fixedHeader: true,
                 responsive: true,
-                keys: true
+                deferRender: true,
+                scroller: true,
+                scrollY: '85vh',
+                scrollCollapse: true,
+                searching: true
               } );
             } );
           </script>
