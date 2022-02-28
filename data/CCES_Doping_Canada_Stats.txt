@@ -2631,6 +2631,36 @@
     "Violation": 2
   },
   {
+    "Beginning": "2002-04-01",
+    "End": "2003-03-31",
+    "Sport": "CCAA - Football",
+    "IC": 8,
+    "OC": 40,
+    "Total": 48,
+    "Scope": "Programme anti-dopage canadien",
+    "Violation": 2
+  },
+  {
+    "Beginning": "2001-04-01",
+    "End": "2002-03-31",
+    "Sport": "CCAA - Football",
+    "IC": 4,
+    "OC": 42,
+    "Total": 46,
+    "Scope": "Programme anti-dopage canadien",
+    "Violation": ""
+  },
+  {
+    "Beginning": "1999-04-01",
+    "End": "2000-03-31",
+    "Sport": "CCAA - Football",
+    "IC": 0,
+    "OC": 29,
+    "Total": 29,
+    "Scope": "Programme anti-dopage canadien",
+    "Violation": ""
+  },
+  {
     "Beginning": "2008-04-01",
     "End": "2009-03-31",
     "Sport": "CCAA - Soccer",
@@ -8443,7 +8473,7 @@
   {
     "Beginning": "2007-04-01",
     "End": "2008-03-31",
-    "Sport": "Rolling sports- Speed",
+    "Sport": "Rolling sports - Speed",
     "IC": 0,
     "OC": 4,
     "Total": 4,
@@ -8453,7 +8483,7 @@
   {
     "Beginning": "2006-04-01",
     "End": "2007-03-31",
-    "Sport": "Rolling sports- Speed",
+    "Sport": "Rolling sports - Speed",
     "IC": 1,
     "OC": 0,
     "Total": 1,
@@ -9033,7 +9063,7 @@
   {
     "Beginning": "2007-04-01",
     "End": "2008-03-31",
-    "Sport": "Rugby ���",
+    "Sport": "Rugby sevens",
     "IC": 0,
     "OC": 6,
     "Total": 6,
@@ -9217,56 +9247,6 @@
     "IC": 0,
     "OC": 1,
     "Total": 1,
-    "Scope": "Programme anti-dopage canadien",
-    "Violation": ""
-  },
-  {
-    "Beginning": "2019-04-01",
-    "End": "2020-03-31",
-    "Sport": "Saut ��",
-    "IC": 0,
-    "OC": 4,
-    "Total": 4,
-    "Scope": "Programme anti-dopage canadien",
-    "Violation": ""
-  },
-  {
-    "Beginning": "2017-04-01",
-    "End": "2018-03-31",
-    "Sport": "Saut ��",
-    "IC": 4,
-    "OC": 6,
-    "Total": 10,
-    "Scope": "Programme anti-dopage canadien",
-    "Violation": ""
-  },
-  {
-    "Beginning": "2014-01-01",
-    "End": "2014-03-31",
-    "Sport": "Saut ��",
-    "IC": 0,
-    "OC": 4,
-    "Total": 4,
-    "Scope": "Programme anti-dopage canadien",
-    "Violation": ""
-  },
-  {
-    "Beginning": "2007-04-01",
-    "End": "2008-03-31",
-    "Sport": "Saut ��",
-    "IC": 6,
-    "OC": 0,
-    "Total": 6,
-    "Scope": "Programme anti-dopage canadien",
-    "Violation": ""
-  },
-  {
-    "Beginning": "2005-04-01",
-    "End": "2006-03-31",
-    "Sport": "Saut ��",
-    "IC": 0,
-    "OC": 4,
-    "Total": 4,
     "Scope": "Programme anti-dopage canadien",
     "Violation": ""
   },
@@ -9567,6 +9547,56 @@
     "IC": 2,
     "OC": 0,
     "Total": 2,
+    "Scope": "Programme anti-dopage canadien",
+    "Violation": ""
+  },
+  {
+    "Beginning": "2019-04-01",
+    "End": "2020-03-31",
+    "Sport": "Ski jumping",
+    "IC": 0,
+    "OC": 4,
+    "Total": 4,
+    "Scope": "Programme anti-dopage canadien",
+    "Violation": ""
+  },
+  {
+    "Beginning": "2017-04-01",
+    "End": "2018-03-31",
+    "Sport": "Ski jumping",
+    "IC": 4,
+    "OC": 6,
+    "Total": 10,
+    "Scope": "Programme anti-dopage canadien",
+    "Violation": ""
+  },
+  {
+    "Beginning": "2014-01-01",
+    "End": "2014-03-31",
+    "Sport": "Ski jumping",
+    "IC": 0,
+    "OC": 4,
+    "Total": 4,
+    "Scope": "Programme anti-dopage canadien",
+    "Violation": ""
+  },
+  {
+    "Beginning": "2007-04-01",
+    "End": "2008-03-31",
+    "Sport": "Ski jumping",
+    "IC": 6,
+    "OC": 0,
+    "Total": 6,
+    "Scope": "Programme anti-dopage canadien",
+    "Violation": ""
+  },
+  {
+    "Beginning": "2005-04-01",
+    "End": "2006-03-31",
+    "Sport": "Ski jumping",
+    "IC": 0,
+    "OC": 4,
+    "Total": 4,
     "Scope": "Programme anti-dopage canadien",
     "Violation": ""
   },
@@ -10403,7 +10433,7 @@
   {
     "Beginning": "2020-04-01",
     "End": "2021-03-31",
-    "Sport": "Speed ���",
+    "Sport": "Speed skating",
     "IC": 0,
     "OC": 87,
     "Total": 87,
@@ -10413,7 +10443,7 @@
   {
     "Beginning": "2019-04-01",
     "End": "2020-03-31",
-    "Sport": "Speed ���",
+    "Sport": "Speed skating",
     "IC": 27,
     "OC": 110,
     "Total": 137,
@@ -10423,7 +10453,7 @@
   {
     "Beginning": "2018-04-01",
     "End": "2019-03-31",
-    "Sport": "Speed ���",
+    "Sport": "Speed skating",
     "IC": 16,
     "OC": 118,
     "Total": 134,
@@ -10433,7 +10463,7 @@
   {
     "Beginning": "2017-04-01",
     "End": "2018-03-31",
-    "Sport": "Speed ���",
+    "Sport": "Speed skating",
     "IC": 43,
     "OC": 148,
     "Total": 191,
@@ -10443,7 +10473,7 @@
   {
     "Beginning": "2016-04-01",
     "End": "2017-03-31",
-    "Sport": "Speed ���",
+    "Sport": "Speed skating",
     "IC": 32,
     "OC": 114,
     "Total": 146,
@@ -10453,7 +10483,7 @@
   {
     "Beginning": "2015-04-01",
     "End": "2016-03-31",
-    "Sport": "Speed ���",
+    "Sport": "Speed skating",
     "IC": 39,
     "OC": 102,
     "Total": 141,
@@ -10463,7 +10493,7 @@
   {
     "Beginning": "2014-04-01",
     "End": "2015-03-31",
-    "Sport": "Speed ���",
+    "Sport": "Speed skating",
     "IC": 22,
     "OC": 129,
     "Total": 151,
@@ -10473,7 +10503,7 @@
   {
     "Beginning": "2014-01-01",
     "End": "2014-03-31",
-    "Sport": "Speed ���",
+    "Sport": "Speed skating",
     "IC": 34,
     "OC": 57,
     "Total": 91,
@@ -10483,7 +10513,7 @@
   {
     "Beginning": "2013-01-01",
     "End": "2013-03-31",
-    "Sport": "Speed ���",
+    "Sport": "Speed skating",
     "IC": 16,
     "OC": 8,
     "Total": 24,
@@ -10493,7 +10523,7 @@
   {
     "Beginning": "2013-01-01",
     "End": "2013-03-31",
-    "Sport": "Speed ���",
+    "Sport": "Speed skating",
     "IC": 21,
     "OC": 7,
     "Total": 28,
@@ -10503,7 +10533,7 @@
   {
     "Beginning": "2012-01-01",
     "End": "2012-03-31",
-    "Sport": "Speed ���",
+    "Sport": "Speed skating",
     "IC": 12,
     "OC": 14,
     "Total": 26,
@@ -10513,7 +10543,7 @@
   {
     "Beginning": "2011-01-01",
     "End": "2011-03-31",
-    "Sport": "Speed ���",
+    "Sport": "Speed skating",
     "IC": 40,
     "OC": 51,
     "Total": 91,
@@ -10523,7 +10553,7 @@
   {
     "Beginning": "2008-04-01",
     "End": "2009-03-31",
-    "Sport": "Speed ���",
+    "Sport": "Speed skating",
     "IC": 42,
     "OC": 83,
     "Total": 125,
@@ -10533,7 +10563,7 @@
   {
     "Beginning": "2007-04-01",
     "End": "2008-03-31",
-    "Sport": "Speed ���",
+    "Sport": "Speed skating",
     "IC": 42,
     "OC": 82,
     "Total": 124,
@@ -10543,7 +10573,7 @@
   {
     "Beginning": "2006-04-01",
     "End": "2007-03-31",
-    "Sport": "Speed ���",
+    "Sport": "Speed skating",
     "IC": 51,
     "OC": 72,
     "Total": 123,
@@ -10553,7 +10583,7 @@
   {
     "Beginning": "2005-04-01",
     "End": "2006-03-31",
-    "Sport": "Speed ���",
+    "Sport": "Speed skating",
     "IC": 59,
     "OC": 66,
     "Total": 125,
@@ -10563,7 +10593,7 @@
   {
     "Beginning": "2004-04-01",
     "End": "2005-03-31",
-    "Sport": "Speed ���",
+    "Sport": "Speed skating",
     "IC": 48,
     "OC": 34,
     "Total": 82,
@@ -10573,7 +10603,7 @@
   {
     "Beginning": "2003-04-01",
     "End": "2004-03-31",
-    "Sport": "Speed ���",
+    "Sport": "Speed skating",
     "IC": 50,
     "OC": 33,
     "Total": 83,
@@ -10583,7 +10613,7 @@
   {
     "Beginning": "2002-04-01",
     "End": "2003-03-31",
-    "Sport": "Speed ���",
+    "Sport": "Speed skating",
     "IC": 8,
     "OC": 11,
     "Total": 19,
@@ -10593,7 +10623,7 @@
   {
     "Beginning": "2001-04-01",
     "End": "2002-03-31",
-    "Sport": "Speed ���",
+    "Sport": "Speed skating",
     "IC": 36,
     "OC": 40,
     "Total": 76,
@@ -10603,40 +10633,10 @@
   {
     "Beginning": "1999-04-01",
     "End": "2000-03-31",
-    "Sport": "Speed ���",
+    "Sport": "Speed skating",
     "IC": 19,
     "OC": 25,
     "Total": 44,
-    "Scope": "Programme anti-dopage canadien",
-    "Violation": ""
-  },
-  {
-    "Beginning": "2002-04-01",
-    "End": "2003-03-31",
-    "Sport": "Sport Coll������",
-    "IC": 8,
-    "OC": 40,
-    "Total": 48,
-    "Scope": "Programme anti-dopage canadien",
-    "Violation": 2
-  },
-  {
-    "Beginning": "2001-04-01",
-    "End": "2002-03-31",
-    "Sport": "Sport Coll������",
-    "IC": 4,
-    "OC": 42,
-    "Total": 46,
-    "Scope": "Programme anti-dopage canadien",
-    "Violation": ""
-  },
-  {
-    "Beginning": "1999-04-01",
-    "End": "2000-03-31",
-    "Sport": "Sport Coll������",
-    "IC": 0,
-    "OC": 29,
-    "Total": 29,
     "Scope": "Programme anti-dopage canadien",
     "Violation": ""
   },
@@ -12731,16 +12731,6 @@
     "Violation": 1
   },
   {
-    "Beginning": "1999-04-01",
-    "End": "2000-03-31",
-    "Sport": "Wheelchair sports - Athl���",
-    "IC": 1,
-    "OC": 2,
-    "Total": 3,
-    "Scope": "Programme anti-dopage canadien",
-    "Violation": ""
-  },
-  {
     "Beginning": "2003-04-01",
     "End": "2004-03-31",
     "Sport": "Wheelchair sports - Basketball",
@@ -12767,6 +12757,16 @@
     "IC": 4,
     "OC": 0,
     "Total": 4,
+    "Scope": "Programme anti-dopage canadien",
+    "Violation": ""
+  },
+  {
+    "Beginning": "1999-04-01",
+    "End": "2000-03-31",
+    "Sport": "Wheelchair sports - Track and field",
+    "IC": 1,
+    "OC": 2,
+    "Total": 3,
     "Scope": "Programme anti-dopage canadien",
     "Violation": ""
   },
