@@ -149,7 +149,7 @@
         <!-- "See more" options at the end show more data when clicked (10 by 10). No refresh of the page. -->
         <!-- Each row is clickable and redirect the user to the right athlete profile. -->
         <div class="col table-responsive">
-
+          <div id="doping_stats_table"></div>
           <script>
             $(document).ready(function() {
               $('#doping_stats_table').DataTable( {
@@ -157,8 +157,6 @@
               } );
             } );
           </script>
-
-          <div id="doping_stats_table" tabindex="1"></div>
 
           <!--
           <script>
