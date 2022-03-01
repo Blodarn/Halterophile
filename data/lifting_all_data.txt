@@ -1,5 +1,5 @@
 {
-    "dataa": [
+    "data": [
   {
     "Competition": "Canadian Senior Weightlifting Championships",
     "Level": "National",
