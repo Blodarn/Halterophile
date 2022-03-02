@@ -21,6 +21,13 @@ body {
   filter: grayscale(50%);
 }
 
+/**********
+ NAV PILLS 
+***********/
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  background-color: #dc3545;
+}
+
 /*******
  COLORS 
 ********/
