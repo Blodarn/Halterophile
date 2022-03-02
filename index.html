@@ -29,7 +29,7 @@
       <script src="javascript/changingText.js"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style2.css">
 
     <!-- Icon link -->
     <link rel = "icon" href="media/4CrossFitters_logo_insta_petit.png" type = "image/x-icon">
@@ -39,39 +39,37 @@
 
   <body>
     <!-- MENU -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-      <!-- Left side -->
-      <a class="navbar-brand" href="index.html">
-        <img src="media/4CrossFitters_logo_insta_petit.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-        HALTEROPHILE
-      </a>      
+    <div class="pe-3 ps-3 shadow" id="menu">
+      <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+          <img src="media/4CrossFitters_logo_insta_petit.png" width="30" height="30" class="d-inline-block align-top" alt="Website logo" loading="lazy" style="margin-right: 10px;">
+          <span class="fs-4">HALTEROPHILE</span>
+        </a>
 
-      <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
-        <span class="navbar-toggler-icon"></span>
-      </button>      
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">HOME</a></li>
+          <li class="nav-item"><a href="lifting.html" class="nav-link">LIFTING</a></li>
+          <li class="nav-item"><a href="doping.html" class="nav-link">DOPING</a></li>
+          <li class="nav-item"><a href="faqs.html" class="nav-link disabled">FAQs</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link disabled">About</a></li>
+        </ul>
+      </header>
+    </div>
 
-      <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="lifting.html">LIFTING DATA</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="doping.html">DOPING DATA</a>
-          </li>
-        </ul>        
-      </div>
-    </nav>  
+    <div class="container">
+      <div class="d-flex align-items-center p-3 my-3 text-white bg-red rounded shadow-sm">
+        <div class="me-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-bar-chart-line" viewBox="0 0 16 16">
+            <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z"></path>
+          </svg>
+        </div>
 
-    <!-- CONTENT -->
-    <div class="h-100 d-flex justify-content-center align-items-center overflow-hidden text-center">
-      <div id="titleSection" class="col-md-12 p-lg-12 mx-auto my-12 rounded shadow-sm p-3 p-md-5">
-        <!--<h1 id="websiteTitle" class="display-1 font-weight-bold text-white">HALTEROPHILE</h1>-->
+        <div class="lh-1">
+          <h1 class="h6 mb-0 text-white lh-1">ALL ABOUT THE NUMBERS | <span id="changingText">WEIGHTLIFTING</span></h1>
+          <small>SEARCH ANYTHING FROM ATHLETE, COMPETITION, COUNTRY, FEDERATION, ETC.</small>
+        </div>
 
-        <h1 class="display-5 font-weight-normal text-white">ALL ABOUT THE NUMBERS</h1>
-
-        <p class="display-6 font-weight-normal text-white"><span id="changingText">WEIGHTLIFTING</span></p>  
-
-        <div class="search-box">
+        <div class="search-box" style="display: none;">
           <div class="search-icon"><i class="fa fa-search search-icon"></i></div>
 
           <form action="" class="search-form">
@@ -85,17 +83,120 @@
             </svg>
 
           <div class="go-icon"><i class="fa fa-arrow-right"></i></div>
-        </div>              
-
-        <p class="display-7 font-weight-normal text-white">SEARCH ANYTHING FROM ATHLETE, COMPETITION, COUNTRY, FEDERATION, ETC.</p>
+        </div>
       </div>
-    </div>
+
+      <!-- Cards -->
+      <div class="px-4 py-3 shadow-sm rounded" id="dataSource">
+        <h4 class="pb-2 border-bottom">DATA SOURCE</h4>
+
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-3">
+          <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-white rounded-5 shadow-sm" id="cardWeightlifting" style="background-image: url('media/2021_11_06-ChampionnatSeniorQC-5629_compressed.jpg');">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                <h2 class="pt-5 mt-5 mb-4 display-7 lh-1 fw-bold">WEIGHTLIFTING</h2>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                    <img src="https://github.com/twbs.png" alt="Bootstrap" class="rounded-circle border border-white" width="32" height="32">
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                    <small>In progress</small>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                    <small>17 168 datapoints</small>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-white rounded-5 shadow-sm" id="cardPowerlifting" style="background-image: url('media/DSCa-1127_compressed.jpg');">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                <h2 class="pt-5 mt-5 mb-4 display-7 lh-1 fw-bold">POWERLIFTING</h2>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                    <img src="https://github.com/twbs.png" alt="Bootstrap" class="rounded-circle border border-white" width="32" height="32">
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                    <small>Later</small>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                    <small>0 datapoints</small>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-white rounded-5 shadow-sm" id="cardFunctionalTraining" style="background-image: url('media/IMG_3872_compressed.jpg');">
+              <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                <h2 class="pt-5 mt-5 mb-4 display-7 lh-1 fw-bold">FUNCTIONNAL FITNESS</h2>
+                <ul class="d-flex list-unstyled mt-auto">
+                  <li class="me-auto">
+                    <img src="https://github.com/twbs.png" alt="Bootstrap" class="rounded-circle border border-white" width="32" height="32">
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                    <small>Later</small>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                    <small>0 datapoints</small>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Updates -->
+      <div class="my-3 p-3 bg-body rounded shadow-sm" id="updates">
+        <h4 class="border-bottom pb-2 mb-0">Recent updates</h4>
+
+        <div class="d-flex text-muted pt-3">
+          <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+
+          <p class="pb-3 mb-0 small lh-sm border-bottom">
+            <strong class="d-block text-gray-dark">@username</strong>
+            Some representative placeholder content, with some information about this user. Imagine this being some sort of status update, perhaps?
+          </p>
+        </div>
+
+        <div class="d-flex text-muted pt-3">
+          <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#e83e8c"></rect><text x="50%" y="50%" fill="#e83e8c" dy=".3em">32x32</text></svg>
+
+          <p class="pb-3 mb-0 small lh-sm border-bottom">
+            <strong class="d-block text-gray-dark">@username</strong>
+            Some more representative placeholder content, related to this other user. Another status update, perhaps.
+          </p>
+        </div>
+
+        <div class="d-flex text-muted pt-3">
+          <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"></rect><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text></svg>
+
+          <p class="pb-3 mb-0 small lh-sm border-bottom">
+            <strong class="d-block text-gray-dark">@username</strong>
+            This user also gets some representative placeholder content. Maybe they did something interesting, and you really want to highlight this in the recent updates.
+          </p>
+        </div>
+
+        <small class="d-block text-end mt-3">
+          <a href="#">All updates</a>
+        </small>
+      </div>      
+    </div>    
 
     <!-- FOOTER -->
-    <footer class="footer font-small">
-      <div class="container text-center">
-        © 2022 COPYRIGHT<a href="https://HALTEROPHILE.com/">&nbsp;HALTEROPHILE.COM</a></br>
-        Questions ? Request ? Contact us at <a href="mailto:info@halterophile.com">info@halterophile.com</a> or write directly to us via <a href="contact.html">the form</a>.
+    <footer class="footer mt-auto py-3 bg-light fixed-bottom text-center">
+      <div class="container">
+        <span class="text-muted">© 2022 COPYRIGHT<a href="https://HALTEROPHILE.com/">&nbsp;HALTEROPHILE.COM</a> | Questions ? Request ? Contact us at <a href="mailto:info@halterophile.com">info@halterophile.com</a> or write directly to us via <a href="contact.html">the form</a>.</span>
       </div>
     </footer>
     <!-- Footer -->

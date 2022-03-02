@@ -28,6 +28,9 @@
       <!-- For adding link on each row of the table -->
       <script src="javascript/rowLinks.js"></script>
 
+      <!-- To be able to call the function to modify the search bar of Datatables -->
+      <script src="javascript/searchDatatables.js"></script>
+      
     <!-- DataTables -->
     <!--  FixedHeader : Sticky header and / or footer for the table v3.2.2
           KeyTable : Keyboard navigation of cells in a table, just like a spreadsheet v2.6.4
@@ -42,35 +45,29 @@
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.5/fh-3.2.2/kt-2.6.4/r-2.2.9/sc-2.0.5/sb-1.3.2/sp-2.0.0/datatables.min.js"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style2.css">
 
     <title>HALTEROPHILE - Lifting</title>
   </head>
 
   <body id="athletes">
     <!-- MENU -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white shadow-sm">
-      <!-- Left side -->
-      <a class="navbar-brand" href="index.html">
-        <img src="media/4CrossFitters_logo_insta_petit.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-        HALTEROPHILE
-      </a>      
+    <div class="pe-3 ps-3 shadow" id="menu">
+      <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
+        <a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+          <img src="media/4CrossFitters_logo_insta_petit.png" width="30" height="30" class="d-inline-block align-top" alt="Website logo" loading="lazy" style="margin-right: 10px;">
+          <span class="fs-4">HALTEROPHILE</span>
+        </a>
 
-      <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
-        <span class="navbar-toggler-icon"></span>
-      </button>      
-
-      <div class="navbar-collapse offcanvas-collapse justify-content-end" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="lifting.html">LIFTING DATA</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="doping.html">DOPING DATA</a>
-          </li>
-        </ul>        
-      </div>
-    </nav>
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="index.html" class="nav-link">HOME</a></li>
+          <li class="nav-item"><a href="lifting.html" class="nav-link active" aria-current="page">LIFTING</a></li>
+          <li class="nav-item"><a href="doping.html" class="nav-link">DOPING</a></li>
+          <li class="nav-item"><a href="faqs.html" class="nav-link disabled">FAQs</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link disabled">About</a></li>
+        </ul>
+      </header>
+    </div>
 
     <!-- CONTENT -->
     <div class="container-fluid containerPad">
@@ -182,23 +179,25 @@
                 responsive: true,
                 deferRender: true,
                 scroller: true,
-                scrollY: '85vh',
+                scrollY: '82vh',
                 scrollCollapse: true,
                 searching: true
               } );
+
+              // Modifications to search bar of Datatables
+              modifSearchBar();
             } );
           </script>
         </div>
       </div>
 
       <!-- FOOTER -->
-      <div class="row footer text-dark font-small">
-          <div class="container text-center">
-            © 2022 COPYRIGHT<a href="https://HALTEROPHILE.com/">&nbsp;HALTEROPHILE.COM</a></br>
-            Questions ? Request ? Contact us at <a href="mailto:info@halterophile.com">info@halterophile.com</a> or write directly to us via <a href="contact.html">the form</a>.
-          </div>
-      </div>
-      <!-- FOOTER -->
+      <footer class="footer mt-auto py-3 bg-light fixed-bottom text-center">
+        <div class="container">
+          <span class="text-muted">© 2022 COPYRIGHT<a href="https://HALTEROPHILE.com/">&nbsp;HALTEROPHILE.COM</a> | Questions ? Request ? Contact us at <a href="mailto:info@halterophile.com">info@halterophile.com</a> or write directly to us via <a href="contact.html">the form</a>.</span>
+        </div>
+      </footer>
+      <!-- Footer -->
     </div>
   </body>
 </html>

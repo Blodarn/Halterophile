@@ -1,4 +1,4 @@
-var names = ['POWERLIFTING', 'CROSSLIFTING', 'WEIGHTLIFTING', 'FUNCTIONNAL TRAINING'];
+var names = ['WEIGHTLIFTING', 'POWERLIFTING', 'CROSSLIFTING', 'FUNCTIONNAL TRAINING'];
 
 setInterval(function() {
   var rand = Math.floor(Math.random() * 4);
