@@ -36,7 +36,7 @@ body {
 }
 
 /****************************
-Zone de recherche Datatables 
+ Barre de recherche Datatables 
 *****************************/
 #lifting_stats_table_filter label, #doping_stats_table_filter label {
   width: 100%;
@@ -53,9 +53,9 @@ Zone de recherche Datatables
   padding-left: 0;
 }
 
-/***********
- SEARCH BAR 
- ***********/
+/**************************
+ SEARCH BAR avec animation 
+ **************************/
 /* https://codepen.io/tommysmall92/pen/oPjaNW?editors=0100 */
 .search-box {
   position: relative;
