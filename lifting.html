@@ -129,8 +129,11 @@
           <script>
             $(document).ready(function() {
               $('#lifting_stats_table').DataTable( {
-                "ajax": "https://www.halterophile.com/data/lifting_all_data.txt",
-                "columns": [
+                ajax: {
+                  url: "https://macaques.ca/couch/_utils/index.html#database/halterophile-lifting/051433ce-5719-462a-bf7c-d01d48fa49bc",
+                  dataSrc: ''
+                },
+                columns: [
                   { "data": "Competition" },
                   { "data": "Level" },
                   { "data": "Type" },
@@ -181,7 +184,8 @@
                 scroller: true,
                 scrollY: '82vh',
                 scrollCollapse: true,
-                searching: true
+                searching: true,
+                searchpanes: true
               } );
 
               // Modifications to search bar of Datatables
